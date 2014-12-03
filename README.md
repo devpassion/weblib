@@ -4,8 +4,7 @@ Pour compiler le projet :
 
 2. Ouvrir un shell.
 
-3. Naviguer jusqu'à la racine du projet puis dans le répertoire allweblib
- (cd <repertoire du projet>).
+3. Naviguer jusqu'à la racine du projet.
 
 4. Exécuter la commande suivante :
 
@@ -16,13 +15,12 @@ Pour compiler le projet :
     
     mvn site
 
-    Le site se trouve ensuite dans <repertoire du projet>/target/site (ouvrir)
+    Le site se trouve ensuite dans <repertoire du projet>/target/site 
+    (ouvrir les fichiers dans un navigateur)
 
 
 
 Les tests d'intégration se trouvent dans le projet 'weblibtests'.
-Les projets sont séparés pour des raison historiques. Pour obtenir la librairie 
-avec les tests, consultez : 
 
 
 Contact, remarques et suggestions : git@lacourarie.org

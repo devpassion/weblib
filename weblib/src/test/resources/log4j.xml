@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd" >
+<log4j:configuration>
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+    <param name="Target" value="System.out"/>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d{dd MMM yyyy HH:mm:ss,SSS}  %-5p %c{1} - %m%n"/>
+    </layout>
+  </appender>
+
+
+
+
+
+<!---->
+<!--  <logger additivity="false" name="org.ecosystems.weblib.html.form.config"> -->
+<!--    <level value="TRACE"></level> -->
+<!--    <appender-ref ref="console"/> -->
+<!--  </logger> -->
+
+<!--  -->
+<!--  <logger additivity="false" name="org.ecosystems.weblib.html.form.config.FormContextImpl"> -->
+<!--    <level value="TRACE"></level> -->
+<!--    <appender-ref ref="console"/> -->
+<!--  </logger> -->
+
+
+
+<!--<logger additivity="false" name="org.ecosystems.weblib.html.loop.DisplayableDateTransformer">-->
+<!--    <level value="TRACE"></level>-->
+<!--    <appender-ref ref="console"/>-->
+<!--  </logger>-->
+<!---->
+<!--  <logger additivity="false" name="org.ecosystems.weblib.html.loop.DisplayableTimeTransformer">-->
+<!--    <level value="TRACE"></level>-->
+<!--    <appender-ref ref="console"/>-->
+<!--  </logger>-->
+
+<!--  <logger additivity="false" name="org.ecosystems.weblib.html.ConditionalVariableTag">-->
+<!--    <level value="TRACE"></level>-->
+<!--    <appender-ref ref="console"/>-->
+<!--  </logger>-->
+
+
+
+
+
+
+
+<!-- <logger additivity="false" name="org.ecosystems.weblib.html.form.ButtonTag">-->
+<!--	<level value="TRACE"></level>-->
+<!--	<appender-ref ref="console"/>  -->
+<!--  </logger>-->
+
+<!--  <logger additivity="false" name="org.ecosystems.weblib.html.form.SubmitTag">-->
+<!--	<level value="TRACE"></level>-->
+<!--	<appender-ref ref="console"/>  -->
+<!--  </logger>-->
+
+<!--   <logger additivity="false" name="org.ecosystems.weblib.lang.PropertiesLanguageConvertor">-->
+<!--    <level value="TRACE"></level>-->
+<!--    <appender-ref ref="console"/>-->
+<!--  </logger>-->
+<!-- -->
+<!-- <logger additivity="false" name="org.ecosystems.weblib.lang.LanguageElementTag">-->
+<!--	<level value="TRACE"></level>-->
+<!--	<appender-ref ref="console"/>  -->
+<!--  </logger>-->
+<!-- -->
+<!-- <logger additivity="false" name="org.ecosystems.weblib.lang.LanguageManager">-->
+<!--    <level value="TRACE"></level>-->
+<!--    <appender-ref ref="console"/>-->
+<!--  </logger>-->
+
+<!--  <logger additivity="false" name="org.ecosystems.snoofle.servlets.Event"> -->
+<!--     <level value="TRACE"></level> -->
+<!--     <appender-ref ref="console"/> -->
+<!--   </logger> -->
+
+
+
+<!-- <logger additivity="false" name="org.ecosystems.snoofle.model">-->
+<!--    <level value="TRACE"></level>-->
+<!--    <appender-ref ref="console"/>-->
+<!--  </logger>-->
+
+<!-- <logger additivity="false" name="org.ecosystems.weblib.html.AbstractHtmlTag">-->
+<!--	<level value="TRACE"></level>-->
+<!--	<appender-ref ref="console"/>  -->
+<!--  </logger> -->
+
+
+<!--   <logger additivity="false" name="org.ecosystems.weblib.html.form.config.FormContextImpl">-->
+<!--    <level value="TRACE"></level>-->
+<!--    <appender-ref ref="console"/>-->
+<!--  </logger>-->
+
+
+
+<!--   <logger additivity="false" name="org.ecosystems.weblib.lang"> -->
+<!--    <level value="TRACE"></level> -->
+<!--    <appender-ref ref="console"/> -->
+<!--  </logger> -->
+
+
+<!--   <logger additivity="false" name="org.ecosystems.weblib.servlet.LanguageServlet.java">-->
+<!--    <level value="TRACE"></level>-->
+<!--    <appender-ref ref="console"/>-->
+<!--  </logger>-->
+
+
+
+<!---->
+<!--   <logger additivity="false" name="org.ecosystems.weblib.html.form.config.FormConfigContext">-->
+<!--    <level value="TRACE"></level>-->
+<!--    <appender-ref ref="console"/>-->
+<!--  </logger>-->
+
+<!-- <logger additivity="false" name="org.ecosystems.weblib.html.form.config.ValidatorList">-->
+<!--    <level value="TRACE"></level>-->
+<!--    <appender-ref ref="console"/>-->
+<!--  </logger>-->
+
+
+<!-- <logger additivity="false" name="org.ecosystems.weblib.html.loop.lang">-->
+<!--    <level value="TRACE"></level>-->
+<!--    <appender-ref ref="console"/>-->
+<!--  </logger>-->
+
+<!---->
+<!-- <logger additivity="false" name="org.ecosystems.weblib.html.form.config"> -->
+<!--    <level value="info"></level> -->
+<!--    <appender-ref ref="console"/> -->
+<!--  </logger> -->
+
+
+<!--  <logger additivity="false" name="org.ecosystems.weblib.html.form.HTMLStringArrayValidator"> -->
+<!--    <level value="TRACE"></level> -->
+<!--    <appender-ref ref="console"/> -->
+<!--  </logger> -->
+
+<!-- <logger additivity="false" name="org.ecosystems.weblib.html.form.FileConverter"> -->
+<!--    <level value="TRACE"></level> -->
+<!--    <appender-ref ref="console"/> -->
+<!--  </logger> -->
+
+<!-- <logger additivity="false" name="org.ecosystems.weblib.html.form.ImageFileValidator"> -->
+<!--    <level value="TRACE"></level> -->
+<!--    <appender-ref ref="console"/> -->
+<!--  </logger> -->
+
+<!--   <logger additivity="false" name="org.ecosystems.snoofle.listen"> -->
+<!--     <level value="TRACE"></level> -->
+<!--     <appender-ref ref="console"/> -->
+<!--   </logger> -->
+
+
+    <root>
+    <priority value ="info" />
+    <appender-ref ref="console" />
+  </root>
+</log4j:configuration>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2011 e-cosystems — Tous droits réservés.
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+
+<xsd:schema xmlns:xsd = "http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.e-cosystems.org/forms"
+	xmlns:fs="http://www.e-cosystems.org/forms"
+elementFormDefault="qualified" attributeFormDefault="unqualified"  >
+
+
+<!-- Elements -->
+
+<!-- Attributs -->
+
+<xsd:attribute name="formName" type="xsd:string">
+	<xsd:annotation>
+		<xsd:documentation>
+		Nom du formulaire.
+		</xsd:documentation>
+	</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="bean" type="xsd:string">
+	<xsd:annotation>
+		<xsd:documentation>
+		Classe du bean de formulaire.	
+		</xsd:documentation>
+	</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="sessionPersistent" type="xsd:boolean">
+	<xsd:annotation>
+		<xsd:documentation>
+		Indique si le champ est persistant dans la session.
+		</xsd:documentation>
+	</xsd:annotation>
+</xsd:attribute>
+
+<xsd:attribute name="flush" type="xsd:string">
+	<xsd:annotation>
+		<xsd:documentation>
+		Indique les formulaires à vider lors de la validation (liste de noms séparés par des virgules).
+		</xsd:documentation>
+	</xsd:annotation>
+</xsd:attribute>
+
+<xsd:attribute name="validator" type="xsd:string">
+	<xsd:annotation>
+		<xsd:documentation>
+		Validateur de champ.
+		</xsd:documentation>
+	</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="validatorClass" type="xsd:string">
+	<xsd:annotation>
+		<xsd:documentation>
+		Classe du validateur de champ.
+		</xsd:documentation>
+	</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="validatorRule" type="xsd:string">
+	<xsd:annotation>
+		<xsd:documentation>
+		Règle de validation.
+		</xsd:documentation>
+	</xsd:annotation>
+</xsd:attribute>
+
+
+<xsd:attribute name="converter" type="xsd:string">
+	<xsd:annotation>
+		<xsd:documentation>
+		Classe du convertisseur.
+		</xsd:documentation>
+	</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="name" type="xsd:string">
+	<xsd:annotation>
+		<xsd:documentation>
+		Nom du champ.
+		</xsd:documentation>
+	</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="required" type="xsd:boolean">
+	<xsd:annotation>
+		<xsd:documentation>
+		Indique si le champ est requis.
+		</xsd:documentation>
+	</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="listener" type="xsd:string">
+	<xsd:annotation>
+		<xsd:documentation>
+		Ecouteur appelé lors de la validation du formulaire.
+		</xsd:documentation>
+	</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="validRedirect" type="xsd:anyURI">
+	<xsd:annotation>
+		<xsd:documentation>
+		URL de redirection lorsque le formulaire est valide.
+		</xsd:documentation>
+	</xsd:annotation>
+</xsd:attribute>
+
+<!--Complex Elements-->
+
+
+<xsd:element name="option">
+	<xsd:annotation>
+		<xsd:documentation>
+			Options de validateur
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexType>
+		<xsd:attribute name="key" use="required" id="key"></xsd:attribute>
+		<xsd:attribute name="value" use="required" id="value"></xsd:attribute>		
+	</xsd:complexType>
+</xsd:element>
+
+
+<xsd:element name="validator">
+	<xsd:annotation>
+		<xsd:documentation>
+		Validateur de champ
+		</xsd:documentation>
+	</xsd:annotation>
+    <xsd:complexType>
+        <xsd:sequence>
+        	<xsd:element minOccurs="0" maxOccurs="unbounded" ref="fs:option" ></xsd:element>
+        </xsd:sequence>
+        <xsd:attribute ref="fs:validatorClass" use="required"></xsd:attribute>
+<!--        <xsd:attribute ref="validatorRule" use="required"></xsd:attribute>-->
+    </xsd:complexType>
+</xsd:element>
+
+<xsd:element name="validators">	
+	<xsd:annotation>
+		<xsd:documentation>
+		Validateurs de champ.
+		</xsd:documentation>
+	</xsd:annotation>
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" ref="fs:validator"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
+
+<xsd:element name="field">
+	<xsd:annotation>
+		<xsd:documentation>
+		Champ de formulaire.
+		</xsd:documentation>
+	</xsd:annotation>
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" ref="fs:validators" ></xsd:element>
+        </xsd:sequence>
+        <xsd:attribute ref="fs:validator" use="prohibited" ></xsd:attribute>
+        <xsd:attribute ref="fs:converter" use="required" ></xsd:attribute>
+        <xsd:attribute ref="fs:name" use="required"></xsd:attribute>
+        <xsd:attribute ref="fs:required" use="optional" default="false"></xsd:attribute>
+
+    </xsd:complexType>
+</xsd:element>
+
+<xsd:element  name="form">
+	<xsd:annotation>
+		<xsd:documentation>
+		Formulaire.
+		</xsd:documentation>
+	</xsd:annotation>
+<xsd:complexType >
+    <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" ref="fs:field"></xsd:element>
+    </xsd:sequence>
+    <xsd:attribute ref="fs:bean" use="required"  ></xsd:attribute>
+    <xsd:attribute ref="fs:formName" use="required" ></xsd:attribute>
+    <xsd:attribute ref="fs:listener" use="required" ></xsd:attribute>
+    <xsd:attribute ref="fs:sessionPersistent" use="optional" default="false" ></xsd:attribute>
+    <xsd:attribute ref="fs:validRedirect" use="optional" default=""></xsd:attribute>
+    <xsd:attribute ref="fs:flush" use="optional"></xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+
+
+<xsd:element  name="forms" >
+	<xsd:annotation>
+		<xsd:documentation>
+		Liste des formulaires d'une application web.
+		</xsd:documentation>
+	</xsd:annotation>
+<xsd:complexType>
+    <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" ref="fs:form"></xsd:element>
+    </xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
+
+ </xsd:schema>

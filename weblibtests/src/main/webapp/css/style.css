@@ -1,0 +1,560 @@
+/*
+
+# -- LICENSE ----------------------------------
+#
+# # Copyright (c) E-cosystems and contributors
+#
+# Licensed under the GPL version 3.0 license.
+# See LICENSE file or
+# http://www.gnu.org/licenses/gpl.html
+#
+# -- LICENSE ------------------------------------
+
+*/
+
+/* ------------------------------------------------------------
+    MAIN
+------------------------------------------------------------- */
+
+a:hover {border-bottom:1px dotted #FFFFFF;}
+a:focus {background : none repeat scroll 0 0 #1E90FF;}
+a {
+color : #000000;
+text-decoration : none;
+outline : none;
+}
+
+html, body, #page, #top, #prelude, #wrapper, #footer, #main, #content, #sidebar, #blognav, #blogextra {
+margin : 0;
+padding : 0;
+}
+
+body {
+margin: 0px;
+padding: 0;
+background: #fafef7;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 1em;
+color: #464646;
+}
+
+p {
+margin : 20px 0 20px 0;
+padding : 10px;
+}
+
+img {
+border: 0 none;
+}
+
+h1{
+font-size: 30px;
+line-height: 25px;
+color: #0a2700;
+}
+
+.clearboth {
+clear: both;
+}
+
+/* ------------------------------------------------------------
+    CONTAINER
+------------------------------------------------------------- */
+
+#container {
+background: #ffffff;
+width : 80%;
+margin : 5px auto 5px auto;
+border:2px solid #dddddd;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+behavior: url(./PIE-1.0beta5/PIE.htc);
+}
+
+#container_index {
+background: #eef4ec;
+margin : 100px 5px 0px 5px;
+padding : 20px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+behavior: url(./PIE-1.0beta5/PIE.htc);
+}
+
+#container_page {
+background: #eef4ec;
+margin : 50px 5px 0px 5px;
+padding : 20px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+behavior: url(./PIE-1.0beta5/PIE.htc);
+}
+
+.explain1 {
+background: transparent url('../img/explain1.gif') no-repeat scroll top left;
+height: 121px;
+width: 29%;
+float:left;
+font-size:1.2em;
+padding : 2% 0% 2% 2%;
+color: #ffffff;
+
+}
+
+.explain2 {
+background: transparent url('../img/explain2.gif') no-repeat scroll top left;
+height: 121px;
+width: 29%;
+float:left;
+font-size:1.2em;
+padding : 2% 0% 2% 5%;
+color: #ffffff;
+}
+
+.explain3 {
+background: transparent url('../img/explain3.gif') no-repeat scroll top left;
+height: 121px;
+width: 29%;
+float:left;
+font-size:1.2em;
+padding : 2% 0% 2% 5%;
+color: #ffffff;
+}
+
+.choice{
+width: 29%;
+min-height: 200px;
+border: 2px solid #DDDDDD;
+float:left;
+background-color: #ffffff;
+margin: 10px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+behavior: url(./PIE-1.0beta5/PIE.htc);
+}
+
+.choice_content{
+padding: 15px 15px 20px 15px;
+}
+
+.choice_content a{
+color : #000000;
+}
+
+.choice_content a:hover{
+color : #000000;
+border-bottom:1px dotted #000000;
+}
+
+.choice a.button{
+color : #ffffff;
+margin: 20px;
+}
+
+.choice .button{
+text-align: center;
+}
+
+.center_button{
+margin-right : auto;
+margin-left : auto;
+width: 259px;
+}
+
+.centered {
+text-align: center;
+}
+
+#summary {
+margin : 10px 0px 0px 30px;
+}
+
+#summary_with_map {
+float: left;
+width: 48%;
+}
+
+#map {
+float: right;
+width: 48%;
+}
+
+#footer {
+background: #ffffff;
+text-align: center;
+}
+
+#comments {
+background: #ffffff;
+padding : 20px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+behavior: url(./PIE-1.0beta5/PIE.htc);
+}
+
+#comments_right {
+float: right;
+width: 75%;
+padding-top : 60px;
+}
+
+#comments_left {
+float: left;
+width: 20%;
+}
+
+.comment_direction {
+color: #BA1820;
+font-weight: bold;
+}
+
+.have_to {
+background: #ffcccc;
+padding : 10px;
+margin : 5px 0 5px 0;
+color: #d72c2c;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+behavior: url(./PIE-1.0beta5/PIE.htc);
+}
+
+.have_js {
+background: #ffcccc;
+padding : 10px;
+margin : 5px 0 5px 0;
+color: #d72c2c;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+behavior: url(./PIE-1.0beta5/PIE.htc);
+}
+
+.validate {
+    -moz-border-radius: 10px 10px 10px 10px;
+    background: none repeat scroll 0 0 green;
+    color: #FFFFFF;
+    display: block;
+    font-weight: bold;
+    margin: 5px;
+    padding: 10px;
+}
+
+.results {
+background: #94cb83;
+padding : 5px;
+color: #0e2e04;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+behavior: url(./PIE-1.0beta5/PIE.htc);
+}
+
+.results a{
+color : #0000ff;
+text-decoration : none;
+border-bottom: 2px solid #0000ff;
+}
+
+.manu {
+background: #cd8f61;
+padding : 5px;
+margin : 5px 0 5px 0;
+color: #0e2e04;
+}
+
+#comeback {
+    -moz-border-radius: 10px 10px 10px 10px;
+    background: none repeat scroll 0 0 #0A2700;
+    margin: 10px;
+    max-width: 300px;
+    padding: 10px;
+}
+
+#comeback a {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+#cursormove {
+    -moz-border-radius: 10px 10px 10px 10px;
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #D72C2C;
+    display: none;
+    font-weight: bold;
+    margin: 5px 0;
+    padding: 10px;
+}
+
+
+
+/* ------------------------------------------------------------
+    TOP
+------------------------------------------------------------- */
+
+#logo {
+float: left;
+margin : 20px;
+height: 55px;
+width: 273px;
+}
+
+/* ------------------------------------------------------------
+    BUTTON
+------------------------------------------------------------- */
+
+.clear { /* generic container (i.e. div) for floating buttons */
+overflow: hidden;
+width: 100%;
+}
+a.button {
+background: transparent url('../img/2.gif') no-repeat scroll top right;
+color: #ffffff;
+display: block;
+float: left;
+font: normal 16px arial, sans-serif;
+font-weight:bold;
+height: 55px;
+margin-right: 6px;
+padding-right: 19px; /* sliding doors padding */
+text-decoration: none;
+min-width:200px;
+}
+a.button span {
+background: transparent url('../img/1.gif') no-repeat;
+display: block;
+padding: 20px 0 20px 18px;
+}
+a.button:hover {
+background: transparent url('../img/4.gif') no-repeat scroll top right;
+color: #ffffff;
+outline: none; /* hide dotted outline in Firefox */
+}
+a.button:hover span {
+background: transparent url('../img/3.gif') no-repeat;
+padding: 20px 0 20px 18px; /* push text down 1px */
+}
+
+/* ------------------------------------------------------------
+    STEP
+------------------------------------------------------------- */
+
+#step1 {
+height: 55px;
+background: transparent url('./img/step1.gif') no-repeat;
+margin:20px;
+}
+
+#step1 p{
+padding : 15px 0 0 65px;
+font-size: 30px;
+color: #0a2700;
+}
+
+#step2 {
+height: 55px;
+background: transparent url('../img/step2.gif') no-repeat;
+margin:20px;
+}
+
+#step2 p{
+padding : 15px 0 0 65px;
+font-size: 30px;
+color: #0a2700;
+}
+
+#step3 {
+height: 55px;
+background: transparent url('../img/step3.gif') no-repeat;
+margin:20px;
+}
+
+#step3 p{
+padding : 15px 0 0 65px;
+font-size: 30px;
+color: #0a2700;
+}
+
+#step4 {
+height: 55px;
+background: transparent url('../img/step4.gif') no-repeat;
+margin:20px;
+}
+
+#step4 p{
+padding : 15px 0 0 65px;
+font-size: 30px;
+color: #0a2700;
+}
+
+#invitation{
+padding : 15px 0 0 5px;
+font-size: 30px;
+color: #0a2700;
+}
+
+/* ------------------------------------------------------------
+    TABLE
+------------------------------------------------------------- */
+
+th, td
+{
+padding: 3px;
+}
+
+th.column_top
+{
+font-weight: bold;
+text-align: center;
+background: #0a2700;
+border: 0 none;
+color: #ffffff;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+behavior: url(./PIE-1.0beta5/PIE.htc);
+}
+
+th.done {
+background: none repeat scroll 0 0 #FFFFFF;
+color: #0A2700;
+font-weight: bold;
+margin: 0 5px 0 0;
+text-align: center;
+}
+
+td.done {
+font-weight: bold;
+text-align: center;
+background: none repeat scroll 0 0 #FFFFFF;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+behavior: url(./PIE-1.0beta5/PIE.htc);
+}
+
+td.done a {
+color : #0000ff;
+text-decoration : none;
+border-bottom: 2px solid #0000ff;
+}
+
+/* ------------------------------------------------------------
+    TABLE
+------------------------------------------------------------- */
+.time_table {
+width: 90%;
+}
+
+.time_table td.column_top
+{
+font-weight: bold;
+text-align: center;
+background: #0a2700;
+border: 0 none;
+color: #ffffff;
+}
+
+.time_table td.no_border
+{
+border: 0 none;
+}
+
+.time_table td.schedule
+{
+font-weight: bold;
+text-align: center;
+background: #dddddd;
+color: #0a2700;
+margin: 0 5px 0 0;
+}
+
+/* ------------------------------------------------------------
+    LANG
+------------------------------------------------------------- */
+
+#form_lang label {
+display: block;
+color: #FFFFFF;
+font-weight: bold;
+}
+
+#form_lang {
+background: none repeat scroll 0 0 #0A2700;
+display: block;
+float: right;
+margin: 10px;
+padding: 10px;
+width: 200px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+behavior: url(./PIE-1.0beta5/PIE.htc);
+}
+
+select#lang {
+color: #6A6969;
+font-size: 15px;
+font-weight: bold;
+margin: 10px 0;
+width: 100%;
+}
+
+
+
+/************************************************************************************
+FORM STYLE BEGIN
+*************************************************************************************/
+
+/* fallback placeholder */
+.placeholder {
+color: #999;
+}
+/* webkit placeholder */
+::-webkit-input-placeholder {
+color: #999;
+}
+/* moz placeholder */
+:-moz-placeholder {
+color: #999;
+}
+
+
+div.hidden {
+    display: none;
+}
+
+/* ------------------------------------------------------------
+    VISUAL
+------------------------------------------------------------- */
+
+.drawing1 {
+    float: right;
+    margin-right: 20%;
+    margin-top: -100px;
+}
+
+.drawing2 {
+    float: right;
+    margin-top: -100px;
+}
+
+.drawing3 {
+    float: right;
+    margin-right: -10%;
+    margin-top: -65px;
+}
+
+.drawing4 {
+    float: right;
+    margin-top: -85px;
+}
+
+
+
+
+

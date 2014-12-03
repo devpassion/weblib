@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tfs:formTest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.e-cosystems.org/forms_test ../../main/resources/FormTestXMLSchema.xsd"
+	xmlns:tfs="http://www.e-cosystems.org/forms_test"
+	>
+  
+  <tfs:formValues tfs:formName="party" >
+  	<tfs:fieldValues tfs:fieldName="title">
+  		<tfs:validValues>
+  			<tfs:validValue>Fête du boudin</tfs:validValue>
+  			<tfs:validValue>Field value texte # @ ? % $</tfs:validValue>
+  		</tfs:validValues>
+  	</tfs:fieldValues>
+  	
+  	<tfs:fieldValues tfs:fieldName="address">
+  		<tfs:validValues>
+  			<tfs:validValue>17 rue Paul bellamy</tfs:validValue>
+  		</tfs:validValues>  		
+  	</tfs:fieldValues>
+  	
+  	<tfs:fieldValues tfs:fieldName="date">
+  		<tfs:validValues>
+  			<tfs:validValue>11/11/2011</tfs:validValue>
+  		</tfs:validValues>  		
+  	</tfs:fieldValues>
+  	
+  	<tfs:fieldValues tfs:fieldName="time" tfs:type="option">
+  		<tfs:validValues>
+  			<tfs:validValue>00:00</tfs:validValue>
+  		</tfs:validValues>  		
+  		<tfs:badValues>
+  			<tfs:badValue>texte</tfs:badValue>
+  		</tfs:badValues>
+  	</tfs:fieldValues>
+  	
+  	<tfs:fieldValues tfs:fieldName="description">
+  		<tfs:validValues>
+  			<tfs:validValue>Venez nombreux à la fête du boudin</tfs:validValue>
+  		</tfs:validValues>  		
+  	</tfs:fieldValues>
+  	
+  	<tfs:fieldValues tfs:fieldName="name">
+  		<tfs:validValues>
+  			<tfs:validValue>marcel</tfs:validValue>
+  		</tfs:validValues>  		
+  	</tfs:fieldValues>
+  	
+  	<tfs:fieldValues tfs:fieldName="mail">
+  		<tfs:validValues>
+  			<tfs:validValue>mail@mail.com</tfs:validValue>
+  		</tfs:validValues>  		
+  	</tfs:fieldValues>
+  	
+  	
+  	<tfs:fieldValues tfs:fieldName="lang">
+  		<tfs:validValues>
+  			<tfs:validValue>fr</tfs:validValue>
+  			<tfs:validValue>en</tfs:validValue>
+  			
+  		</tfs:validValues>  	
+  		<tfs:badValues>
+  			<tfs:badValue>de</tfs:badValue>
+  			<tfs:badValue>es</tfs:badValue>
+  		</tfs:badValues>	
+  	</tfs:fieldValues>
+  	
+  	
+<!--   	<tfs:fieldValues tfs:fieldName="image" > -->
+<!--   		<tfs:validValues> -->
+<!--   			<tfs:validValue>target/test-classes/img.png</tfs:validValue> -->
+<!--   			<tfs:validValue>target/test-classes/img.jpg</tfs:validValue> -->
+<!--   		</tfs:validValues> -->
+<!--   		<tfs:badValues> -->
+<!--   			<tfs:badValue>target/test-classes/bad_img.txt</tfs:badValue> -->
+<!--   			<tfs:badValue>target/test-classes/bad_img.jpg</tfs:badValue>  			 -->
+<!--   		</tfs:badValues> -->
+  		
+<!--   	</tfs:fieldValues> -->
+  	
+  	
+  </tfs:formValues>
+  
+  	<tfs:scenarioSequence tfs:begin="/admin.html" >
+  			<tfs:formScenario  tfs:senarioIndex="1" >
+  			
+  				<tfs:submit>
+  					<tfs:id>ponctuel_submit</tfs:id>
+  				</tfs:submit>
+		
+			<tfs:fieldValue tfs:fieldName="title">
+				<tfs:value>Fête du boudin</tfs:value>
+			</tfs:fieldValue>
+			
+			<tfs:fieldValue tfs:fieldName="address" >
+				<tfs:value>17 rue Paul bellamy, Nantes</tfs:value>		
+				<tfs:postClick>
+					<tfs:id>map_button</tfs:id>
+					<tfs:delay>2000</tfs:delay>
+				</tfs:postClick>	
+			</tfs:fieldValue>
+			
+			<tfs:fieldValue tfs:fieldName="date">
+				<tfs:value>11/11/2011</tfs:value>
+			</tfs:fieldValue>
+			
+			<tfs:fieldValue tfs:fieldName="time" >
+				<tfs:value>00:00</tfs:value>
+			</tfs:fieldValue>
+			
+			<tfs:fieldValue tfs:fieldName="description">
+				<tfs:value>Venez nombreux à la fête du boudin</tfs:value>
+			</tfs:fieldValue>
+			
+			<tfs:fieldValue tfs:fieldName="name">
+				<tfs:value>marcel</tfs:value>
+			</tfs:fieldValue>
+			
+			<tfs:fieldValue tfs:fieldName="mail">
+				<tfs:value>mail@mail.com</tfs:value>
+			</tfs:fieldValue>
+			
+			<tfs:waitedResults>
+				<tfs:waitedResult tfs:resultType="matchUrl">admin.html</tfs:waitedResult>
+				<tfs:waitedResult tfs:resultType="noMatchSource">have_to</tfs:waitedResult>
+				<tfs:waitedResult tfs:resultType="matchSource">Nantes</tfs:waitedResult>
+			</tfs:waitedResults>
+			
+		</tfs:formScenario>
+		
+  	</tfs:scenarioSequence>
+	  	
+
+  
+  
+</tfs:formTest>

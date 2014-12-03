@@ -1,0 +1,720 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.ecosystems</groupId>
+	<artifactId>weblib</artifactId>
+	<version>0.1.6</version>
+	<name>web librairie d'e-cosystems</name>
+	<description>La weblib est la librairie de fonctionnalités web utilisées par e-cosystems, elle est avant tout adaptée aux contraintes de développement de l'association</description>
+	<url>http://e-cosystems.org/wiki/doku.php?id=weblib</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<organization>
+		<name>e-cosystems</name>
+		<url>http://www.e-cosystems.org</url>
+	</organization>
+	<developers>
+		<developer>
+			<id>tim288</id>
+			<organization>e-cosystems</organization>
+			<name>Emmanuel Lacourarie</name>
+			<email>dev@e-cosystems.org</email>
+			<organizationUrl>http://www.e-cosystems.org</organizationUrl>
+
+		</developer>
+	</developers>
+	<contributors>
+		<contributor>
+			<name>Benjamin Larcher</name>
+			<organization>e-cosystems</organization>
+			<organizationUrl>http://www.e-cosystems.org</organizationUrl>
+			<email>benlarcher@gmail.org</email>
+		</contributor>
+	</contributors>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+			<comments>A business-friendly OSS license</comments>
+		</license>
+	</licenses>
+
+
+
+	<distributionManagement>
+
+		<repository>
+			<id>repo</id>
+			<url>sftp://repository.e-cosystems.org:1022/repository/common</url>
+
+		</repository>
+		<site>
+			<id>mvn-sites</id>
+			<url>scp://mvn-sites.e-cosystems.org:1022/weblib</url>
+		</site>
+	</distributionManagement>
+
+
+
+	<build>
+
+		<testResources>
+
+
+			<testResource>
+				<directory>src/test/resources</directory>
+				<includes>
+					<include>testForm.xml</include>
+					<include>wlconfig.xml</include>
+					<include>formTestBeans.xml</include>
+					<include>images/img.jpg</include>
+					<include>images/bad_img.jpg</include>
+					<include>lang/**</include>
+					<include>log4j.xml</include>
+				</includes>
+			</testResource>
+
+		</testResources>
+
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<systemPropertyVariables>
+						<log4j.configuration>file:target/test-classes/log4j.xml</log4j.configuration>
+					</systemPropertyVariables>
+					<detail>true</detail>
+
+				</configuration>
+				<dependencies>
+
+				</dependencies>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.2</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>package</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
+							<goal>test-jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<phase>generate-sources</phase>
+						<configuration>
+							<sources>
+								<source>src/main/generated</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<version>1.5</version>
+				<configuration>
+					<generatedResourcesDirectory>src/main/generated</generatedResourcesDirectory>
+					<packageName>org.ecosystems.weblib.html.form.config.generated</packageName>
+					<schemaDirectory>src/main/resources</schemaDirectory>
+					<outputDirectory>src/main/generated</outputDirectory>
+
+				</configuration>
+				<!-- <executions> -->
+				<!-- <execution> -->
+				<!-- <id>generate-jaxb</id> -->
+				<!-- <goals> -->
+				<!-- <goal>xjc</goal> -->
+				<!-- </goals> -->
+				<!-- <configuration> -->
+				<!-- <clearOutputDir>false</clearOutputDir> -->
+				<!-- </configuration> -->
+				<!-- </execution> -->
+				<!-- </executions> -->
+			</plugin>
+
+			<!-- <plugin> -->
+			<!-- <groupId>com.sun.tools.xjc.maven2</groupId> -->
+			<!-- <artifactId>maven-jaxb-plugin</artifactId> -->
+			<!-- <version>1.1.1</version> -->
+			<!-- <configuration> -->
+			<!-- <generatePackage>org.ecosystems.weblib.html.form.config.generated</generatePackage> -->
+			<!-- <generateDirectory>src/main/generated</generateDirectory> -->
+			<!-- <includeSchemas> -->
+			<!-- <includeSchema>src/main/resources/**/*.xsd</includeSchema> -->
+			<!-- </includeSchemas> -->
+			<!-- <verbose>true</verbose> -->
+			<!-- </configuration> -->
+			<!-- </plugin> -->
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<generatedSourcesDirectory>src/main/generated</generatedSourcesDirectory>
+
+				</configuration>
+			</plugin>
+
+			<!-- <plugin> -->
+			<!-- <groupId>net.sourceforge.maven-taglib</groupId> -->
+			<!-- <artifactId>maven-taglib-plugin</artifactId> -->
+			<!-- <version>2.4</version> -->
+<!---->
+			<!-- <executions> -->
+			<!-- <execution> -->
+			<!-- <goals> -->
+			<!-- <goal>taglibdocjar</goal> -->
+			<!-- </goals> -->
+			<!-- </execution> -->
+			<!-- </executions> -->
+			<!-- </plugin> -->
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.12</version>
+				<configuration>
+					<detail>true</detail>
+
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.mycila.maven-license-plugin</groupId>
+				<artifactId>maven-license-plugin</artifactId>
+				<version>1.9.0</version>
+				<configuration>
+					<header>LICENSE.txt</header>
+					<strictCheck>true</strictCheck>
+					<encoding>UTF-8</encoding>
+
+					<excludes>
+						<exclude>header.txt</exclude>
+						<exclude>.checkstyle</exclude>
+						<exclude>.directory</exclude>
+
+						<exclude>src/main/generated/**/*.java</exclude>
+						<exclude>src/main/webapp/*</exclude>
+						<exclude>src/test/resources/**</exclude>
+						<exclude>src/main/resources/**</exclude>
+						<exclude>src/main/webapp/**</exclude>
+
+						<exclude>**/*.log</exclude>
+						<exclude>checkstyle.xml</exclude>
+						<exclude>checkstyle-suppressions.xml</exclude>
+						<exclude>src/main/java/org/ecosystems/weblib/filter/TimerFilter.java</exclude>
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.4</version>
+
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<locales>en,fr</locales>
+					<detail>true</detail>
+
+					<reportPlugins>
+						<plugin>
+							<groupId>org.codehaus.mojo</groupId>
+							<artifactId>dashboard-maven-plugin</artifactId>
+							<version>1.0.0-beta-1</version>
+						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-checkstyle-plugin</artifactId>
+							<version>2.9.1</version>
+							<configuration>
+								<configLocation>checkstyle.xml</configLocation>
+								<encoding>UTF-8</encoding>
+								<violationSeverity>info</violationSeverity>
+								<headerFile>header.txt</headerFile>
+								<excludes>org/ecosystems/weblib/html/form/config/generated/**/*</excludes>
+								<suppressionsFile>checkstyle-suppressions.xml</suppressionsFile>
+								<detail>true</detail>
+							</configuration>
+						</plugin>
+
+						<!-- <plugin> -->
+						<!-- <groupId>org.apache.maven.plugins</groupId> -->
+						<!-- <artifactId>maven-pmd-plugin</artifactId> -->
+						<!-- <version>2.4</version> -->
+						<!-- <configuration> -->
+						<!-- <rulesets> -->
+						<!-- <ruleset>/rulesets/basic.xml</ruleset> -->
+						<!-- <ruleset>/rulesets/imports.xml</ruleset> -->
+						<!-- <ruleset>/rulesets/unusedcode.xml</ruleset> -->
+						<!-- <exclude name="UnusedPrivateField" /> -->
+						<!-- <ruleset>/rulesets/finalizers.xml</ruleset> -->
+						<!-- </rulesets> -->
+						<!-- </configuration> -->
+						<!-- </plugin> -->
+
+						<plugin>
+							<groupId>org.codehaus.mojo</groupId>
+							<artifactId>findbugs-maven-plugin</artifactId>
+							<version>2.4.0</version>
+							<configuration>
+								<effort>Max</effort>
+								<threshold>Low</threshold>
+							</configuration>
+						</plugin>
+
+						<!-- <plugin> -->
+						<!-- <groupId>org.codehaus.mojo</groupId> -->
+						<!-- <artifactId>jdepend-maven-plugin</artifactId> -->
+						<!-- <version>2.0-beta-2</version> -->
+						<!-- </plugin> -->
+
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-javadoc-plugin</artifactId>
+							<version>2.8.1</version>
+							<configuration>
+								<charset>UTF-8</charset>
+								<encoding>UTF-8</encoding>
+
+							</configuration>
+						</plugin>
+<!---->
+						<!-- <plugin> -->
+						<!-- <groupId>net.sourceforge.maven-taglib</groupId> -->
+						<!-- <artifactId>maven-taglib-plugin</artifactId> -->
+						<!-- <version>2.4</version> -->
+
+						<!-- <configuration> -->
+						<!-- <taglib.src.dir>src/main/resources/META-INF</taglib.src.dir> -->
+						<!-- <parseHtml>true</parseHtml> -->
+						<!-- <xsltDir>xls</xsltDir> -->
+						<!-- </configuration> -->
+
+
+						<!-- </plugin> -->
+<!---->
+
+
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-pmd-plugin</artifactId>
+							<version>2.7.1</version>
+							<configuration>
+								<targetJdk>1.7</targetJdk>
+								<sourceEncoding>UTF-8</sourceEncoding>
+							</configuration>
+						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-jxr-plugin</artifactId>
+							<version>2.3</version>
+						</plugin>
+						<plugin>
+							<groupId>org.codehaus.mojo</groupId>
+							<artifactId>taglist-maven-plugin</artifactId>
+							<version>2.4</version>
+						</plugin>
+					</reportPlugins>
+
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.wagon</groupId>
+						<artifactId>wagon-ssh</artifactId>
+						<version>2.2</version>
+
+					</dependency>
+				</dependencies>
+			</plugin>
+
+		</plugins>
+		<!-- <resources> -->
+		<!-- <resource> -->
+		<!-- <directory>src/main/resources</directory> -->
+		<!-- <includes> -->
+		<!-- <include>META-INF/tags/taglib.tld</include> -->
+		<!-- </includes> -->
+		<!-- </resource> -->
+		<!-- </resources> -->
+
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh</artifactId>
+				<version>2.2</version>
+			</extension>
+
+		</extensions>
+
+
+
+
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.12</version>
+					<configuration>
+						<systemPropertyVariables>
+							<org.ecosystems.weblib.test.form.CONFIG_FILE>src/test/resources/wlconfig.xml</org.ecosystems.weblib.test.form.CONFIG_FILE>
+							<org.ecosystems.weblib.test.form.FORM_CONFIG_FILE>src/test/resources/testForm.xml</org.ecosystems.weblib.test.form.FORM_CONFIG_FILE>
+							<org.ecosystems.weblib.test.form.TEST_FORM_FILE>src/test/resources/formTestBeans.xml</org.ecosystems.weblib.test.form.TEST_FORM_FILE>
+						</systemPropertyVariables>
+
+					</configuration>
+				</plugin>
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehaus.mojo
+										</groupId>
+										<artifactId>
+											jaxb2-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.5,)
+										</versionRange>
+										<goals>
+											<goal>xjc</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+	</build>
+	<dependencies>
+
+		<!-- <dependency> -->
+		<!-- <groupId>org.grlea.log.adapters</groupId> -->
+		<!-- <artifactId>simple-log-slf4j</artifactId> -->
+		<!-- <version>2.0.1</version> -->
+		<!-- </dependency> -->
+
+
+
+		<dependency>
+			<groupId>org.apache.maven.wagon</groupId>
+			<artifactId>wagon-ssh-external</artifactId>
+			<version>2.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-utils</artifactId>
+			<version>3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.wagon</groupId>
+			<artifactId>wagon-ssh-common</artifactId>
+			<version>2.0</version>
+		</dependency>
+
+
+
+
+
+
+
+
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-configuration</groupId>
+			<artifactId>commons-configuration</artifactId>
+			<version>1.7</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>jmimemagic</groupId>
+			<artifactId>jmimemagic</artifactId>
+			<version>0.1.2</version>
+		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>javax.servlet.jsp</groupId> -->
+		<!-- <artifactId>javax.servlet.jsp-api</artifactId> -->
+		<!-- <version>2.2.1</version> -->
+		<!-- <scope>provided</scope> -->
+		<!-- </dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>javax.servlet.jsp</groupId> -->
+		<!-- <artifactId>jsp-api</artifactId> -->
+		<!-- <version>2.0</version> -->
+		<!-- </dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>net.sf.staccatocommons</groupId> -->
+		<!-- <artifactId>commons-collections</artifactId> -->
+		<!-- <version>1.1</version> -->
+		<!-- <scope>provided</scope> -->
+		<!-- </dependency> -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.1</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>el-api</artifactId>
+			<version>2.1.2-b05</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<type>jar</type>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-validator</groupId>
+			<artifactId>commons-validator</artifactId>
+			<version>1.3.1</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>oro</groupId>
+			<artifactId>oro</artifactId>
+			<version>2.0.8</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>javax.mail-api</artifactId>
+			<version>1.4.4</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>jasper</artifactId>
+			<version>6.0.35</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>httpunit</groupId>
+			<artifactId>httpunit</artifactId>
+			<version>1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sourceforge.jwebunit</groupId>
+			<artifactId>jwebunit-htmlunit-plugin</artifactId>
+			<version>3.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>ch.qos.logback</groupId>
+					<artifactId>logback-classic</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+	</dependencies>
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>dashboard-maven-plugin</artifactId>
+				<version>1.0.0-beta-1</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>dashboard</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.9.1</version>
+				<configuration>
+					<configLocation>checkstyle.xml</configLocation>
+					<encoding>UTF-8</encoding>
+					<violationSeverity>info</violationSeverity>
+					<headerFile>header.txt</headerFile>
+					<excludes>org/ecosystems/weblib/html/form/config/generated/**/*</excludes>
+					<suppressionsFile>checkstyle-suppressions.xml</suppressionsFile>
+					<detail>true</detail>
+				</configuration>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>checkstyle</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+
+			<!-- <plugin> -->
+			<!-- <groupId>org.apache.maven.plugins</groupId> -->
+			<!-- <artifactId>maven-pmd-plugin</artifactId> -->
+			<!-- <version>2.4</version> -->
+			<!-- <configuration> -->
+			<!-- <rulesets> -->
+			<!-- <ruleset>/rulesets/basic.xml</ruleset> -->
+			<!-- <ruleset>/rulesets/imports.xml</ruleset> -->
+			<!-- <ruleset>/rulesets/unusedcode.xml</ruleset> -->
+			<!-- <exclude name="UnusedPrivateField" /> -->
+			<!-- <ruleset>/rulesets/finalizers.xml</ruleset> -->
+			<!-- </rulesets> -->
+			<!-- </configuration> -->
+			<!-- </plugin> -->
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>2.4.0</version>
+				<configuration>
+					<effort>Max</effort>
+					<threshold>Low</threshold>
+				</configuration>
+			</plugin>
+
+			<!-- <plugin> -->
+			<!-- <groupId>org.codehaus.mojo</groupId> -->
+			<!-- <artifactId>jdepend-maven-plugin</artifactId> -->
+			<!-- <version>2.0-beta-2</version> -->
+			<!-- </plugin> -->
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.8.1</version>
+				<configuration>
+					<charset>UTF-8</charset>
+					<encoding>UTF-8</encoding>
+
+				</configuration>
+			</plugin>
+<!---->
+			<!-- <plugin> -->
+			<!-- <groupId>net.sourceforge.maven-taglib</groupId> -->
+			<!-- <artifactId>maven-taglib-plugin</artifactId> -->
+			<!-- <version>2.4</version> -->
+
+			<!-- <configuration> -->
+			<!-- <taglib.src.dir>src/main/resources/META-INF</taglib.src.dir> -->
+			<!-- <parseHtml>true</parseHtml> -->
+			<!-- <xsltDir>xls</xsltDir> -->
+			<!-- </configuration> -->
+
+
+			<!-- </plugin> -->
+<!---->
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>2.7.1</version>
+				<configuration>
+					<targetJdk>1.7</targetJdk>
+					<sourceEncoding>UTF-8</sourceEncoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jxr-plugin</artifactId>
+				<version>2.3</version>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>taglist-maven-plugin</artifactId>
+				<version>2.4</version>
+			</plugin>
+
+		</plugins>
+
+	</reporting>
+
+</project>

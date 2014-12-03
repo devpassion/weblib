@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fs:forms 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.e-cosystems.org/forms jar:file//home/tim288/.m2/repository/org/ecosystems/weblib/0.0.2/weblib-0.0.2.jar!/forms_schema.xsd"
+	xmlns:fs="http://www.e-cosystems.org/forms"
+	xmlns="http://www.e-cosystems.org/forms"
+	>
+	
+    <!-- Le formulaire se nomme mail, on définit la classe du listener et le bean de formulaire -->
+    <fs:form fs:formName="mail" fs:bean="org.ecosystems.weblibtests.tag.MailBean" fs:listener="org.ecosystems.weblibtests.tag.MailFormListener" 
+           fs:sessionPersistent="true" >
+        <!-- La persistance de session fait que le formulaire reste remplit pendant une session -->
+        <fs:field fs:name="mail"
+                fs:converter="org.ecosystems.weblib.html.form.MailConverter" fs:required="true" >
+            <fs:validators>
+                <!-- Ici un validateur vérifie la règle 'NotNull', un autre la règle 'InvalidMail' -->
+                <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.NotNullValidator" />
+                <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.MailValidator" />
+            </fs:validators>
+            
+        </fs:field>
+
+     
+		</form>
+</fs:forms>

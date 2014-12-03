@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd = "http://www.w3.org/2001/XMLSchema"
+elementFormDefault="qualified" attributeFormDefault="unqualified"  >
+
+
+<!-- Elements -->
+
+<!-- Attributs -->
+
+<xsd:attribute name="formName" type="xsd:string"></xsd:attribute>
+<xsd:attribute name="bean" type="xsd:string"></xsd:attribute>
+<xsd:attribute name="sessionPersistent" type="xsd:boolean"></xsd:attribute>
+
+<xsd:attribute name="validator" type="xsd:string"></xsd:attribute>
+<xsd:attribute name="validatorClass" type="xsd:string"></xsd:attribute>
+<xsd:attribute name="validatorRule" type="xsd:string"></xsd:attribute>
+
+
+<xsd:attribute name="converter" type="xsd:string"></xsd:attribute>
+<xsd:attribute name="name" type="xsd:string"></xsd:attribute>
+<xsd:attribute name="required" type="xsd:boolean"></xsd:attribute>
+<xsd:attribute name="listener" type="xsd:string"></xsd:attribute>
+
+<!--Complex Elements-->
+
+<xsd:element name="validator">
+    <xsd:complexType>
+        <xsd:attribute ref="validatorClass" use="required"></xsd:attribute>
+<!--        <xsd:attribute ref="validatorRule" use="required"></xsd:attribute>-->
+    </xsd:complexType>
+</xsd:element>
+
+<xsd:element name="validators">
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" ref="validator"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
+
+<xsd:element name="field">
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" ref="validators" ></xsd:element>
+        </xsd:sequence>
+        <xsd:attribute ref="validator" use="prohibited" ></xsd:attribute>
+        <xsd:attribute ref="converter" use="required" ></xsd:attribute>
+        <xsd:attribute ref="name" use="required"></xsd:attribute>
+        <xsd:attribute ref="required" use="optional" default="false"></xsd:attribute>
+
+    </xsd:complexType>
+</xsd:element>
+
+<xsd:element  name="form">
+<xsd:complexType>
+    <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="unbounded" ref="field"></xsd:element>
+    </xsd:sequence>
+    <xsd:attribute ref="bean" use="required"  ></xsd:attribute>
+    <xsd:attribute ref="formName" use="required" ></xsd:attribute>
+    <xsd:attribute ref="listener" use="required" ></xsd:attribute>
+    <xsd:attribute ref="sessionPersistent" use="optional" default="false" ></xsd:attribute>
+</xsd:complexType>
+</xsd:element>
+
+
+<xsd:element  name="forms" >
+<xsd:complexType>
+    <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="unbounded" ref="form"></xsd:element>
+    </xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
+
+ </xsd:schema>

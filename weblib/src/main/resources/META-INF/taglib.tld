@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2011 e-cosystems — Tous droits réservés.
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<taglib 
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>2.0</jsp-version>
+    <description>Bibliothèque de tags web e-cosystems</description>
+    <short-name>wl</short-name>
+    <uri>http://www.e-cosystems.org/taglib</uri>
+
+    <tag>
+        <dynamic-attributes>true</dynamic-attributes>
+        <name>input</name>
+        <tag-class>org.ecosystems.weblib.html.form.InputTag</tag-class>
+        <description>Tag input simple</description>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>persistent</name>
+            <required>false</required>
+            <description>Indique si l'attribut est persistent entre les requêtes</description>
+            <type>boolean</type>
+        </attribute>
+    </tag>
+
+
+    <tag>
+        <dynamic-attributes>true</dynamic-attributes>
+        <name>textarea</name>
+        <tag-class>org.ecosystems.weblib.html.form.TextAreaTag</tag-class>
+        <description>Tag textarea simple</description>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>persistent</name>
+            <required>false</required>
+            <description>Indique si l'attribut est persistent entre les requêtes</description>
+            <type>boolean</type>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>select</name>
+        <dynamic-attributes>true</dynamic-attributes>
+        <tag-class>org.ecosystems.weblib.html.form.SelectTag</tag-class>
+        <description>Tag select</description>
+        <body-content>JSP</body-content>
+<!--        <attribute>-->
+<!--            <name>name</name>-->
+<!--            <required>true</required>-->
+<!--            <description>contexteAttribut name de la balise</description>-->
+<!--        </attribute>-->
+
+    </tag>
+
+    <tag>
+        <name>option</name>
+        <dynamic-attributes>true</dynamic-attributes>
+        <tag-class>org.ecosystems.weblib.html.form.OptionTag</tag-class>
+        <description>Tag option</description>
+        <body-content>JSP</body-content>
+<!--        <attribute>-->
+<!--            <name>value</name>-->
+<!--            <required>true</required>-->
+<!--            <description>Attribut value de la balise</description>-->
+<!--        </attribute>-->
+
+    </tag>
+
+
+	<tag>
+		<name>mv</name>
+		<description>Tag affichant son corps si une variable n'est pas présente dans un contexte</description>
+		<body-content>JSP</body-content>
+		<tag-class>org.ecosystems.weblib.html.MissingVariableTag</tag-class>
+		<attribute>
+            <name>name</name>
+            <required>true</required>
+            <description>Nom de la variable à tester</description>
+            <type>String</type>
+        </attribute>
+        <attribute>
+            <name>policy</name>
+            <description>Politique de récupération de variable, GET_POST, SESSION ou
+                SESSION_POST_GET</description>
+            <required>true</required>
+            <type>org.ecosystems.weblib.html.RequestPolicy</type>
+        </attribute>
+	</tag>
+	
+	
+    <tag>
+        <name>cv</name>
+        <description>Tag affichant son corps si une variable est présente et correspond à un éventuel test</description>
+        <body-content>JSP</body-content>
+        <tag-class>org.ecosystems.weblib.html.ConditionalVariableTag</tag-class>
+        <attribute>
+            <name>name</name>
+            <required>true</required>
+            <description>Nom de la variable à tester</description>
+            <type>String</type>
+        </attribute>
+        <attribute>
+            <name>policy</name>
+            <description>Politique de récupération de variable, GET_POST, SESSION ou
+                SESSION_POST_GET</description>
+            <required>true</required>
+            <type>org.ecosystems.weblib.html.RequestPolicy</type>
+        </attribute>
+        <attribute>
+            <name>missingValue</name>
+            <description>Valeur à laquelle la variable doit correspondre</description>
+            <required>false</required>
+            <type>String</type>
+        </attribute>
+    </tag>
+
+    <tag>
+        <dynamic-attributes>true</dynamic-attributes>
+        <name>button</name>
+        <tag-class>org.ecosystems.weblib.html.form.ButtonTag</tag-class>
+        <description>Bouton</description>
+        <body-content>JSP</body-content>
+    </tag>
+
+    <tag>
+        <dynamic-attributes>true</dynamic-attributes>
+        <name>submit</name>
+        <tag-class>org.ecosystems.weblib.html.form.SubmitTag</tag-class>
+        <description>Bouton de soumission</description>
+        <body-content>JSP</body-content>
+    </tag>
+    <tag>
+        <dynamic-attributes>true</dynamic-attributes>
+        <name>reset</name>
+        <tag-class>org.ecosystems.weblib.html.form.ResetTag</tag-class>
+        <description>Remise à zéro de formulaire</description>
+        <body-content>JSP</body-content>
+    </tag>
+
+
+
+    <tag>
+        <dynamic-attributes>true</dynamic-attributes>
+        <name>form</name>
+        <tag-class>org.ecosystems.weblib.html.form.FormTag</tag-class>
+        <description>Tag input simple</description>
+        <body-content>JSP</body-content>
+        <attribute>
+            <name>postedKey</name>
+            <required>true</required>
+            <description>Clé envoyée dans les données du formulaire pour indiquer
+                la soumission du formulaire</description>
+        </attribute>
+    </tag>
+
+
+
+    <tag>
+        <name>loopWrapper</name>
+        <description>Wrappeur de boucle. Affiche son contenu uniquement si des résultats sont présents</description>
+        <body-content>JSP</body-content>
+        <tag-class>org.ecosystems.weblib.html.loop.LoopWrapperTag</tag-class>
+        <attribute>
+            <name>resultProviderClass</name>
+            <description>Classe fournissant les résultats, prioritaire sur le paramètre du tag loop</description>
+            <required>true</required>
+        </attribute>
+        <attribute>
+            <name>loopIndex</name>
+            <description>Index unique de la boucle en cas de pagination</description>
+            <required>false</required>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>loop</name>
+        <description>Boucle affichant un ensemble de résultats</description>
+        <body-content>JSP</body-content>
+        <tag-class>org.ecosystems.weblib.html.loop.LoopTag</tag-class>
+        <attribute>
+            <name>resultProviderClass</name>
+            <description>Classe fournissant les résultats, non prise en compte si la boucle est dans un tag loopWrapper</description>
+            <required>false</required>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>val</name>
+        <description>Valeur d'une colonne d'une boucle</description>
+        <body-content>empty</body-content>
+        <tag-class>org.ecosystems.weblib.html.loop.ValTag</tag-class>
+        <attribute>
+            <name>name</name>
+            <description>nom de colonne</description>
+            <required>true</required>
+        </attribute>
+        <attribute>
+            <name>disableEscape</name>
+            <description>Désactive la sécurité d'échappement html</description>
+            <required>false</required>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <name>transformer</name>
+            <description>nom complet de la classe du transformer</description>
+            <required>false</required>
+        </attribute>
+    </tag>
+
+
+    <tag>
+        <name>loopPages</name>
+        <description>Boucle de pagination</description>
+        <body-content>JSP</body-content>
+        <tag-class>org.ecosystems.weblib.html.loop.LoopPaginationTag</tag-class>
+        <attribute>
+            <name>resultProviderClass</name>
+            <description>Classe fournissant les résultats</description>
+            <required>true</required>       
+        </attribute>
+        <attribute>
+            <name>pageParamName</name>
+            <description>Nom du paramètre HTTP de numéro de page</description>
+            <required>true</required>
+        </attribute>
+        <attribute>
+            <name>rcParamName</name>
+            <description>Nom du paramètre HTTP de nombre de résultats par page</description>
+            <required>true</required>
+        </attribute>
+
+    </tag>
+
+    <tag>
+        <name>current</name>
+        <description>Code HTML du bouton de page courante (doit être contenu dans un tag loopPages)</description>
+        <body-content>JSP</body-content>
+        <tag-class>org.ecosystems.weblib.html.loop.CurrentPaginationTag</tag-class>
+    </tag>
+
+    <tag>
+        <name>normal</name>
+        <description>Code HTML du bouton de page normale (doit être contenu dans un tag loopPages)</description>
+        <body-content>JSP</body-content>
+        <tag-class>org.ecosystems.weblib.html.loop.NormalPaginationTag</tag-class>
+    </tag>
+	
+	
+	<tag>
+        <name>currentPage</name>
+        <description>Numéro de la page courante (doit être contenu dans un tag loopPages)</description>
+        <body-content>empty</body-content>
+        <tag-class>org.ecosystems.weblib.html.loop.PageNumberTag</tag-class>
+    </tag>
+
+    <tag>
+        <name>totalPage</name>
+        <description>nombre total de pages (doit être contenu dans un tag loopPages)</description>
+        <body-content>empty</body-content>
+        <tag-class>org.ecosystems.weblib.html.loop.PageTotalTag</tag-class>
+    </tag>
+	
+	
+	
+
+
+
+    <tag>
+        <name>ci</name>
+        <tag-class>org.ecosystems.weblib.html.form.ConditionalInputTag</tag-class>
+        <body-content>JSP</body-content>
+        <description>
+        ContitionalInput : le corp est affiché si la règle gérée est invalide.
+        Attention : les règles sont gérées par la configuration de formulaire.
+        </description>
+        <attribute>
+            <name>name</name>
+            <required>true</required>
+            <description>Nom du champ input associé à l'afficheur, le corp est
+                affcihé si le champ est invalide</description>
+        </attribute>
+        <attribute>
+            <name>rule</name>
+            <description>Nom de la règle qui provoque l'affichage du corp
+            Règles connues de la librairie :
+            - NotNull : Le champ ne doit pas être null
+            - InvalidMail : l'adresse mail est invalide ( ie : marcel(at)marcel:com)
+            - InvalidInteger : un entier est invalide
+            - InvalidNumeric : un champ numérique avec virgule est invalide
+            - HexaRule : un champ numérique n'est pas compris entre 0 et 60
+            </description>
+        </attribute>
+    </tag>
+    <tag>
+        <name>cf</name>
+        <tag-class>org.ecosystems.weblib.html.form.ConditionalFormTag</tag-class>
+        <body-content>JSP</body-content>
+        <description>ConditionalForm : Le corp est affiché si un formulaire est valide</description>
+        <attribute>
+            <name>formName</name>
+            <description>Nom du formulaire dont la validation provoque l'affichage, pris en compte uniquement si le tag n'est pas dans un formulaire</description>
+            <required>false</required>
+            <type>String</type>
+        </attribute>
+        <attribute>
+        	<name>showOnInvalid</name>
+        	<description>Indique si le contenu du tag est affiché si le formulaire est invalide</description>
+        	<required>false</required>
+        	<type>boolean</type>        	
+        </attribute>
+    </tag>
+
+
+    <tag>
+        <name>lang</name>
+        <body-content>JSP</body-content>
+        <description>Tag affichant un élément de langue</description>
+        <tag-class>org.ecosystems.weblib.lang.LanguageElementTag</tag-class>
+        <attribute>
+            <name>namespace</name>
+            <description>espace de nom de l'élément de langue</description>
+            <required>true</required>
+        </attribute>
+        <attribute>
+            <name>key</name>
+            <description>clé de l'élément de langue</description>
+            <required>true</required>
+        </attribute>
+        <attribute>
+            <name>lang</name>
+            <description>langue de l'élément</description>
+        </attribute>
+<!--        <attribute>-->
+<!--            <name>languageConvertor</name>-->
+<!--            <description>Classe du convertisseur ( déconseillé )</description>-->
+<!--        </attribute>-->
+    </tag>
+
+    <tag>
+        <name>langParameter</name>
+        <description>Tag spécifiant un paramètre d'élément de langue</description>
+        <body-content>JSP</body-content>
+        <tag-class>org.ecosystems.weblib.lang.LanguageParameterTag</tag-class>
+        <attribute>
+            <name>name</name>
+            <description>nom du paramètre, il doit être contenu dans la chaine de langue entre crochets ({})</description>
+            <required>true</required>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>parameter</name>
+        <description>tag affichant un paramètre de session ou de requête</description>
+        <body-content>empty</body-content>
+        <tag-class>org.ecosystems.weblib.html.ParameterTag</tag-class>
+        <attribute>
+            <name>name</name>
+            <description>nom du paramètre</description>
+            <required>true</required>
+        </attribute>
+        <attribute>
+            <name>policy</name>
+            <description>Politique de choix du contexte, GET_POST, SESSION ou
+                SESSION_POST_GET</description>
+            <required>true</required>
+            <type>org.ecosystems.weblib.html.RequestPolicy</type>
+        </attribute>
+        <attribute>
+            <name>transformer</name>
+            <description>nom complet de la classe du transformer</description>
+            <required>false</required>
+        </attribute>
+    </tag>
+
+
+    <tag>
+        <name>langLoop</name>
+        <body-content>JSP</body-content>
+        <description>Boucle sur les langues disponibles</description>
+        <tag-class>org.ecosystems.weblib.html.loop.lang.LangLoopTag</tag-class>
+        <attribute>
+        	<name>all</name>
+        	<type>boolean</type>
+        	<required>false</required>        	
+        	<description>Indique si les langues affichées sont les langues disponibles (false, valeur par défaut) ou toutes les langues (true) utile pour proposer des traductions</description>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>langCode</name>
+        <body-content>empty</body-content>
+        <description>Code de langue ( dans le tag langLoop )</description>
+        <tag-class>org.ecosystems.weblib.html.loop.lang.LangCodeTag</tag-class>
+    </tag>
+
+    <tag>
+        <name>langCurrent</name>
+        <body-content>JSP</body-content>
+        <description>Code de langue ( dans le tag langLoop )</description>
+        <tag-class>org.ecosystems.weblib.html.loop.lang.CurrentTag</tag-class>
+    </tag>
+
+    <tag>
+        <name>langDisplay</name>
+        <body-content>empty</body-content>
+        <description>Nom de la langue ( dans le tag langLoop )</description>
+        <tag-class>org.ecosystems.weblib.html.loop.lang.LangDisplayTag</tag-class>
+    </tag>
+
+
+
+
+
+
+    <tag>
+        <name>debugParam</name>
+        <body-content>empty</body-content>
+        <description>Affiche les données de contexte</description>
+        <tag-class>org.ecosystems.weblib.html.debug.DebugParamsTag</tag-class>
+        <attribute>
+        	<name>devIP</name>
+        	<description>IP du développeur</description>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>debugMail</name>
+        <body-content>empty</body-content>
+        <description>Affiche les données de mail envoyés</description>
+        <tag-class>org.ecosystems.weblib.html.debug.SendedMailDebugTag</tag-class>
+    </tag>
+
+	<tag>
+        <name>tp</name>
+        <body-content>JSP</body-content>
+        <description>Tag présent si l'application est en tests</description>
+        <tag-class>org.ecosystems.weblib.test.TestPresentTag</tag-class>
+    </tag>
+
+
+	<tag>
+		<name>nextPageLink</name>
+		<body-content>JSP</body-content>
+		<description>Tag affichant l'url relative mennant à la page suivante</description>
+		<tag-class>org.ecosystems.weblib.html.loop.pagination.NextPaginationLinkTag</tag-class>
+		<attribute>
+			<name>contentInjectMode</name>
+			<description>Indique si le tag est utilisé dans un contexte d'injection de contenu</description>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<name>defaultPage</name>
+			<type>java.lang.String</type>
+			<description>Nom de la page qui devra ëtre remplacée par une url par défaut (ex : /?param=value au lieu de /default.html?params=)</description>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>nextPage</name>
+		<body-content>JSP</body-content>
+		<description>Tag conteneur du bouton de page suivante</description>
+		<tag-class>org.ecosystems.weblib.html.loop.pagination.NextPaginationContainerTag</tag-class>
+	</tag>
+	
+	
+	<tag>
+		<name>prevPage</name>
+		<body-content>JSP</body-content>
+		<description>Tag conteneur du bouton de page précédente</description>
+		<tag-class>org.ecosystems.weblib.html.loop.pagination.PrevPaginationContainerTag</tag-class>
+	</tag>
+
+	<tag>
+		<name>prevPageLink</name>
+		<body-content>JSP</body-content>
+		<description>Tag affichant l'url relative mennant à la page précedente</description>
+		<tag-class>org.ecosystems.weblib.html.loop.pagination.PrevPaginationLinkTag</tag-class>
+		<attribute>
+			<name>contentInjectMode</name>
+			<description>Indique si le tag est utilisé dans un contexte d'injection de contenu</description>
+			<type>boolean</type>
+		</attribute>
+		<attribute>
+			<name>defaultPage</name>
+			<type>java.lang.String</type>
+			<description>Nom de la page qui devra ëtre remplacée par une url par défaut (ex : /?param=value au lieu de /default.html?params=)</description>
+		</attribute>
+	</tag>
+	
+	
+    <function>
+        <name>trad</name>
+        <function-class>org.ecosystems.weblib.lang.LanguageManager</function-class>
+        <function-signature>java.lang.String getELTraduction( javax.servlet.jsp.PageContext,java.lang.String,java.lang.String)</function-signature>
+    </function>
+    
+     <function>
+        <name>staticDomain</name>
+        <function-class>org.ecosystems.weblib.tools.HttpTools</function-class>
+        <function-signature>java.lang.String getStaticDomain()</function-signature>
+    </function>
+
+</taglib>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fs:forms 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.e-cosystems.org/forms jar:file//home/tim288/.m2/repository/org/ecosystems/weblib/0.0.2/weblib-0.0.2.jar!/forms_schema.xsd"
+	xmlns:fs="http://www.e-cosystems.org/forms"
+	xmlns="http://www.e-cosystems.org/forms"
+	>
+	
+  <fs:form fs:formName="party" fs:bean="org.ecosystems.weblibtests.model.Party" fs:listener="org.ecosystems.weblibtests.control.PartyListener" fs:sessionPersistent="true" >
+        <fs:field fs:name="title"
+                fs:converter="org.ecosystems.weblib.html.form.StringConverter" fs:required="true" >
+            <fs:validators>
+                <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.NotNullValidator" />
+            </fs:validators>
+        </fs:field>
+
+        <fs:field fs:name="address"
+            fs:converter="org.ecosystems.weblib.html.form.StringConverter" fs:required="true" >
+                <fs:validators>
+                    <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.NotNullValidator" />
+                </fs:validators>
+            </fs:field>
+
+        <fs:field fs:name="date" fs:converter="org.ecosystems.weblib.html.form.DateConverter" fs:required="true" >
+
+            <fs:validators>
+                <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.NotNullValidator"/>
+                <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.DateValidator" />
+            </fs:validators>
+
+        </fs:field>
+
+
+
+
+
+
+        <fs:field fs:name="time" fs:converter="org.ecosystems.weblib.html.form.TimeConverter">
+            <fs:validators>
+                <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.TimeValidator"/>
+            </fs:validators>
+        </fs:field>
+
+        <fs:field fs:name="name" fs:converter="org.ecosystems.weblib.html.form.StringConverter" fs:required="true" >
+            <fs:validators>
+                <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.NotNullValidator"/>
+            </fs:validators>
+        </fs:field>
+
+        <fs:field fs:name="description"
+            fs:converter="org.ecosystems.weblib.html.form.StringConverter" fs:required="false" >
+        </fs:field>
+
+        <fs:field fs:name="mail" fs:converter="org.ecosystems.weblib.html.form.StringConverter" fs:required="true" >
+            <fs:validators>
+                <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.NotNullValidator"/>
+                <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.MailValidator"/>
+            </fs:validators>
+        </fs:field>
+		
+		<fs:field fs:name="image" fs:converter="org.ecosystems.weblib.html.form.FileConverter" fs:required="false" >
+            <fs:validators>
+                 <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.ImageFileValidator"/>
+                 <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.NotNullValidator"/>
+            </fs:validators>
+        </fs:field>
+		
+		
+		
+    </fs:form>
+
+
+	
+	
+	
+	<form fs:bean="org.ecosystems.weblibtests.model.Logo" fs:formName="add" fs:listener="org.ecosystems.weblibtests.servlet.AddFormListener" fs:validRedirect="/added.html">
+		
+		<field fs:required="true" fs:name="name" fs:converter="org.ecosystems.weblib.html.form.StringConverter">
+			<validators>
+                <validator fs:validatorClass="org.ecosystems.weblib.html.form.NotNullValidator" />
+                <validator fs:validatorClass="org.ecosystems.weblib.html.form.HTMLStringValidator" />
+            </validators>
+		</field>
+		
+		
+		<field fs:required="true" fs:name="image" fs:converter="org.ecosystems.weblib.html.form.FileConverter">
+			<validators>
+                <validator fs:validatorClass="org.ecosystems.weblib.html.form.NotNullValidator" />
+                <validator fs:validatorClass="org.ecosystems.weblib.html.form.ImageFileValidator" />
+                
+            </validators>
+		</field>
+		
+		<field fs:required="true" fs:name="comments" fs:converter="org.ecosystems.weblib.html.form.StringConverter">
+			<validators>
+                <validator fs:validatorClass="org.ecosystems.weblib.html.form.NotNullValidator" />
+                <validator fs:validatorClass="org.ecosystems.weblib.html.form.HTMLStringValidator" />
+            </validators>
+		</field>
+		
+		<field fs:name="link" fs:converter="org.ecosystems.weblib.html.form.StringConverter">
+			<validators>
+                <validator fs:validatorClass="org.ecosystems.weblib.html.form.NotNullValidator" />
+                <validator fs:validatorClass="org.ecosystems.weblib.html.form.HTMLStringValidator" />
+            </validators>
+		</field>
+		
+		<field fs:name="linkInfo" fs:converter="org.ecosystems.weblib.html.form.StringConverter">
+			<validators>
+                <validator fs:validatorClass="org.ecosystems.weblib.html.form.NotNullValidator" />
+                <validator fs:validatorClass="org.ecosystems.weblib.html.form.HTMLStringValidator" />
+            </validators>
+		</field>
+		
+		
+		
+		
+		
+		
+		<field fs:name="lang" fs:converter="org.ecosystems.weblib.html.form.StringConverter">
+			<validators>
+                <validator fs:validatorClass="org.ecosystems.weblib.html.form.NotNullValidator" />
+                <validator fs:validatorClass="org.ecosystems.weblib.html.form.LangCodeValidator" />                
+            </validators>
+		</field>
+		
+		<field fs:name="category" fs:converter="org.ecosystems.weblibtests.control.CategorieSetConverter">
+			<validators>
+                <validator fs:validatorClass="org.ecosystems.weblib.html.form.NotNullValidator" />
+                <validator fs:validatorClass="org.ecosystems.weblib.html.form.FilledSetValidator" />
+                
+                <validator fs:validatorClass="org.ecosystems.weblibtests.control.CategorieArrayValidator" />                
+            </validators>
+		</field>
+		
+		
+		
+		
+		</form>
+	
+	
+	
+
+</fs:forms>

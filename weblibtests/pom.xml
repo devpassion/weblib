@@ -1,0 +1,179 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.ecosystems</groupId>
+  <artifactId>weblibtests</artifactId>
+  <packaging>war</packaging>
+  <version>0.1.6</version>
+  <name>weblibtests</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+
+  
+  <build>
+  	<plugins>
+  		<plugin>
+           <artifactId>maven-compiler-plugin</artifactId>
+           <version>2.3.2</version>
+           
+           <configuration>
+               <source>1.7</source>
+               <encoding>UTF-8</encoding>
+               <target>1.7</target>
+               <debug>true</debug>
+               <debuglevel>source,lines,vars</debuglevel>
+               <verbose>true</verbose>
+               <detail>true</detail>
+           </configuration>
+       </plugin>
+       
+       <plugin>
+        		<groupId>org.apache.maven.plugins</groupId>
+        		<artifactId>maven-source-plugin</artifactId>
+        		<version>2.1.2</version>
+        		<executions>
+        			<execution>
+        				<id>attach-sources</id>
+        				<phase>package</phase>
+        				<goals>
+        					<goal>jar-no-fork</goal>
+        					<goal>test-jar-no-fork</goal>
+        				</goals>
+        			</execution>
+        		</executions>
+        	</plugin>
+       
+       <plugin>
+	       	<groupId>org.codehaus.mojo</groupId>
+	        <artifactId>tomcat-maven-plugin</artifactId>
+	        <version>1.1</version>
+	        <configuration>
+			<addContextWarDependencies>true</addContextWarDependencies>
+			<charset>UTF-8</charset>
+			<systemProperties>
+				<org.ecosystems.test>1</org.ecosystems.test>
+				<org.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES>true</org.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES>
+				<org.ecosystems.weblib.test.form.TEST_FORM_FILE>src/main/webapp/WEB-INF/formTestBeans.xml</org.ecosystems.weblib.test.form.TEST_FORM_FILE>
+			</systemProperties>
+			</configuration>
+			<executions>
+				<execution>
+					<id>tomcat-start</id>
+					<phase>pre-integration-test</phase>
+					<goals>
+						<goal>run-war</goal>
+					</goals>
+					<configuration>
+						<fork>true</fork>
+					</configuration>
+				</execution>
+				<execution>
+					<id>tomcat-stop</id>
+					<phase>post-integration-test</phase>
+					<goals>
+						<goal>shutdown</goal>
+					</goals>
+					<configuration>
+					</configuration>
+				</execution>
+			</executions>
+       </plugin>
+       
+       <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-war-plugin</artifactId>
+			<version>2.1.1</version>
+			<configuration>
+				
+			</configuration>
+		</plugin>
+		
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-failsafe-plugin</artifactId>
+			<version>2.7.2</version>
+			<configuration>
+				
+				<encoding>UTF-8</encoding>
+				<reportsDirectory>${basedir}/target/surefire-reports</reportsDirectory>
+				<includes>
+					<include>**/*IT.java</include>
+				</includes>	
+				<systemPropertyVariables>
+					<org.ecosystems.weblib.test.form.STATIC_RESOURCES>css,img,js</org.ecosystems.weblib.test.form.STATIC_RESOURCES>
+					<org.ecosystems.weblib.test.form.TEST_FORM_FILE>src/main/webapp/WEB-INF/formTestBeans.xml</org.ecosystems.weblib.test.form.TEST_FORM_FILE>
+				</systemPropertyVariables>				
+			</configuration>
+			<executions>
+				<execution>
+					<goals>
+						<goal>integration-test</goal>
+						<goal>verify</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+       
+  	</plugins>
+  </build>
+  
+  <dependencies>
+   
+    
+    <dependency>
+            <groupId>commons-configuration</groupId>
+            <artifactId>commons-configuration</artifactId>
+            <version>1.7</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.1</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+        	<groupId>org.slf4j</groupId>
+        	<artifactId>slf4j-nop</artifactId>
+        	<version>1.6.4</version>
+        	<scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <type>jar</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.ecosystems</groupId>
+            <artifactId>weblib</artifactId>
+            <version>0.1.6</version>
+            <scope>compile</scope>
+        </dependency>
+
+
+               
+    
+  </dependencies>
+</project>

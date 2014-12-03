@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2011 e-cosystems — Tous droits réservés.
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<taglib xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>2.0</jsp-version>
+    <description>Bibliothèque de tags web e-cosystems</description>
+    <tag>
+        <dynamic-attributes>true</dynamic-attributes>
+        <name>input</name>
+        <tag-class>org.ecosystems.weblib.html.form.InputTag</tag-class>
+        <description>Tag input simple</description>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>persistent</name>
+            <required>false</required>
+            <description>Indique si l'attribut est persistent entre les requêtes</description>
+        </attribute>
+    </tag>
+
+
+    <tag>
+        <dynamic-attributes>true</dynamic-attributes>
+        <name>textarea</name>
+        <tag-class>org.ecosystems.weblib.html.form.TextAreaTag</tag-class>
+        <description>Tag textarea simple</description>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>persistent</name>
+            <required>false</required>
+            <description>Indique si l'attribut est persistent entre les requêtes</description>
+        </attribute>
+    </tag>
+
+
+
+    <tag>
+        <dynamic-attributes>true</dynamic-attributes>
+        <name>button</name>
+        <tag-class>org.ecosystems.weblib.html.form.ButtonTag</tag-class>
+        <description>Bouton</description>
+        <body-content>JSP</body-content>
+    </tag>
+
+    <tag>
+        <dynamic-attributes>true</dynamic-attributes>
+        <name>submit</name>
+        <tag-class>org.ecosystems.weblib.html.form.SubmitTag</tag-class>
+        <description>Bouton de soumission</description>
+        <body-content>JSP</body-content>
+    </tag>
+    <tag>
+        <dynamic-attributes>true</dynamic-attributes>
+        <name>reset</name>
+        <tag-class>org.ecosystems.weblib.html.form.ResetTag</tag-class>
+        <description>Remise à zéro de formulaire</description>
+        <body-content>JSP</body-content>
+    </tag>
+
+
+
+    <tag>
+        <dynamic-attributes>true</dynamic-attributes>
+        <name>form</name>
+        <tag-class>org.ecosystems.weblib.html.form.FormTag</tag-class>
+        <description>Tag input simple</description>
+        <body-content>JSP</body-content>
+        <attribute>
+            <name>postedKey</name>
+            <required>true</required>
+            <description>Clé envoyée dans les données du formulaire pour indiquer
+                la soumission du formulaire</description>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>ci</name>
+        <tag-class>org.ecosystems.weblib.html.form.ConditionalInputTag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <name>name</name>
+            <required>true</required>
+            <description>Nom du champ input associé à l'afficheur, le corp est
+                affcihé si le champ est invalide</description>
+        </attribute>
+    </tag>
+    <tag>
+        <name>cf</name>
+        <tag-class>org.ecosystems.weblib.html.form.ConditionalFormTag</tag-class>
+        <body-content>JSP</body-content>
+        <!--		<attribute>-->
+        <!--			<name>name</name>-->
+        <!--			<required>true</required>-->
+        <!--
+            <description>Nom du champ input associé à l'afficheur, le corp est
+            affcihé si le champ est invalide</description>
+        -->
+        <!--		</attribute>-->
+    </tag>
+
+    <tag>
+        <name>lang</name>
+        <body-content>JSP</body-content>
+        <description>Tag affichant un élément de langue</description>
+        <tag-class>org.ecosystems.weblib.lang.LanguageElementTag</tag-class>
+        <attribute>
+            <name>namespace</name>
+            <description>espace de nom de l'élément de langue</description>
+            <required>true</required>
+        </attribute>
+        <attribute>
+            <name>key</name>
+            <description>clé de l'élément de langue</description>
+            <required>true</required>
+        </attribute>
+        <attribute>
+            <name>lang</name>
+            <description>langue de l'élément</description>
+        </attribute>
+        <attribute>
+            <name>languageConvertor</name>
+            <description>Classe du convertisseur</description>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>langParameter</name>
+        <description>Tag spécifiant un paramètre d'élément de langue</description>
+        <body-content>JSP</body-content>
+        <tag-class>org.ecosystems.weblib.lang.LanguageParameterTag</tag-class>
+        <attribute>
+            <name>name</name>
+            <description>nom du paramètre</description>
+            <required>true</required>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>parameter</name>
+        <description>tag affichant un paramètre de session ou de requête</description>
+        <body-content>empty</body-content>
+        <tag-class>org.ecosystems.weblib.html.ParameterTag</tag-class>
+        <attribute>
+            <name>name</name>
+            <description>nom du paramètre</description>
+            <required>true</required>
+        </attribute>
+        <attribute>
+            <name>policy</name>
+            <description>Politique de choix du contexte, GET_POST, SESSION ou
+                SESSION_POST_GET</description>
+            <required>true</required>
+            <type>org.ecosystems.weblib.html.RequestPolicy</type>
+        </attribute>
+    </tag>
+
+</taglib>

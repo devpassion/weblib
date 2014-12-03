@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+
+.ok {
+background: green;
+padding : 5px;
+margin : 5px 0 5px 0;
+color: black;
+}

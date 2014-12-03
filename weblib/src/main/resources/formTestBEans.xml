@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<formTest 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="default namespace"
+	xsi:schemaLocation="./FormTestXMLSchema.xsd">
+  
+  <formValues formName="party" >
+  	<fieldValues fieldName="title">
+  		<validValues>
+  			<validValue>Fête du boudin</validValue>
+  		</validValues>
+  	</fieldValues>
+  	
+  	<fieldValues fieldName="address">
+  		<validValues>
+  			<validValue>17 rue Paul bellamy</validValue>
+  		</validValues>  		
+  	</fieldValues>
+  	
+  	<fieldValues fieldName="date">
+  		<validValues>
+  			<validValue>11/11/2011</validValue>
+  		</validValues>  		
+  	</fieldValues>
+  	
+  	<fieldValues fieldName="time" type="option">
+  		<validValues>
+  			<validValue>00:00</validValue>
+  		</validValues>  		
+  	</fieldValues>
+  	
+  	<fieldValues fieldName="description">
+  		<validValues>
+  			<validValue>Venez nombreux à la fête du boudin</validValue>
+  		</validValues>  		
+  	</fieldValues>
+  	
+  	<fieldValues fieldName="name">
+  		<validValues>
+  			<validValue>marcel</validValue>
+  		</validValues>  		
+  	</fieldValues>
+  	
+  	<fieldValues fieldName="mail">
+  		<validValues>
+  			<validValue>mail@mail.com</validValue>
+  		</validValues>  		
+  	</fieldValues>
+  	
+  	
+  	
+  	
+  </formValues>
+  
+  	<scenarioSequence name="add_event" begin="/ponctuel.html" >
+  			<formScenario  senarioIndex="1" >
+  			
+  				<submit>
+  					<id>ponctuel_submit</id>
+  				</submit>
+		
+			<fieldValue fieldName="title">
+				<value>Fête du boudin</value>
+			</fieldValue>
+			
+			<fieldValue fieldName="address" >
+				<value>17 rue Paul bellamy</value>		
+				<postClick>
+					<id>map_button</id>
+					<delay>2000</delay>
+				</postClick>	
+			</fieldValue>
+			
+			<fieldValue fieldName="date">
+				<value>11/11/2011</value>
+			</fieldValue>
+			
+			<fieldValue fieldName="time" type="option">
+				<value>00:00</value>
+			</fieldValue>
+			
+			<fieldValue fieldName="description">
+				<value>Venez nombreux à la fête du boudin</value>
+			</fieldValue>
+			
+			<fieldValue fieldName="name">
+				<value>marcel</value>
+			</fieldValue>
+			
+			<fieldValue fieldName="mail">
+				<value>mail@mail.com</value>
+			</fieldValue>
+			
+			<waitedResults>
+				<waitedResult resultType="matchUrl">ponctuel_recap.html</waitedResult>
+			</waitedResults>
+			
+		</formScenario>
+		
+		<formScenario senarioIndex="2">
+			<submit>
+				<id>ponctuel_recap_valid</id>
+			</submit>
+			<waitedResults>
+				<waitedResult resultType="matchUrl">ponctuel_valid.html</waitedResult>
+			</waitedResults>
+			
+		</formScenario>
+		
+		<formScenario senarioIndex="3">
+			<link>
+				<id>public_link</id>
+			</link>
+			<waitedResults>
+				<waitedResult resultType="matchUrl">event.html</waitedResult>
+			</waitedResults>
+		</formScenario>
+  	</scenarioSequence>
+	  	
+
+  
+  
+</formTest>

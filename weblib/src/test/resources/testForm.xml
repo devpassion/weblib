@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fs:forms 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.e-cosystems.org/forms ../../main/resources/forms_schema.xsd"
+	xmlns:fs="http://www.e-cosystems.org/forms"
+	xmlns="http://www.e-cosystems.org/forms"
+	>
+	
+  <fs:form fs:formName="party" fs:bean="org.ecosystems.weblib.html.form.Party" fs:listener="org.ecosystems.weblib.html.form.PartyListener" fs:sessionPersistent="true" >
+        <fs:field fs:name="title"
+                fs:converter="org.ecosystems.weblib.html.form.StringConverter" fs:required="true" >
+            <fs:validators>
+                <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.NotNullValidator" />
+            </fs:validators>
+        </fs:field>
+
+        <fs:field fs:name="address"
+            fs:converter="org.ecosystems.weblib.html.form.StringConverter" fs:required="true" >
+                <fs:validators>
+                    <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.NotNullValidator" />
+                </fs:validators>
+            </fs:field>
+
+        <fs:field fs:name="date" fs:converter="org.ecosystems.weblib.html.form.DateConverter" fs:required="true" >
+
+            <fs:validators>
+                <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.NotNullValidator"/>
+                <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.DateValidator" />
+            </fs:validators>
+
+        </fs:field>
+
+        <fs:field fs:name="lat" fs:converter="org.ecosystems.weblib.html.form.NumericConverter" fs:required="true" >
+            <fs:validators>
+                <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.NotNullValidator"/>
+                <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.NumericValidator"/>
+            </fs:validators>
+        </fs:field>
+
+        <fs:field fs:name="lng" fs:converter="org.ecosystems.weblib.html.form.NumericConverter" fs:required="true" >
+            <fs:validators>
+                <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.NotNullValidator"/>
+                <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.NumericValidator"/>
+            </fs:validators>
+        </fs:field>
+
+
+
+
+        <fs:field fs:name="time" fs:converter="org.ecosystems.weblib.html.form.TimeConverter">
+            <fs:validators>
+                <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.TimeValidator"/>
+            </fs:validators>
+        </fs:field>
+
+        <fs:field fs:name="name" fs:converter="org.ecosystems.weblib.html.form.StringConverter" fs:required="true" >
+            <fs:validators>
+                <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.NotNullValidator"/>
+            </fs:validators>
+        </fs:field>
+
+        <fs:field fs:name="description"
+            fs:converter="org.ecosystems.weblib.html.form.StringConverter" fs:required="false" >
+        </fs:field>
+
+        <fs:field fs:name="mail" fs:converter="org.ecosystems.weblib.html.form.StringConverter" fs:required="true" >
+            <fs:validators>
+                <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.NotNullValidator"/>
+                <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.MailValidator"/>
+            </fs:validators>
+        </fs:field>
+	
+		<fs:field fs:name="lang" fs:converter="org.ecosystems.weblib.html.form.StringConverter" fs:required="true" >
+            <fs:validators>
+                <fs:validator fs:validatorClass="org.ecosystems.weblib.html.form.LangCodeValidator"/>
+            </fs:validators>
+        </fs:field>
+
+    </fs:form>
+
+</fs:forms>

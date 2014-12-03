@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	
+	xsi:schemaLocation="http://www.e-cosystems.org/forms ../../main/resources/forms_schema.xsd"
+	xmlns="http://www.e-cosystems.org/forms"
+	
+	>
+
+  <form formName="party" bean="org.ecosystems.weblibtests.model.Party" listener="org.ecosystems.weblibtests.control.PartyListener" sessionPersistent="true" >
+        <field name="title"
+                converter="org.ecosystems.weblib.html.form.StringConverter" required="true" >
+            <validators>
+                <validator validatorClass="org.ecosystems.weblib.html.form.NotNullValidator" />
+            </validators>
+        </field>
+
+        <field name="address"
+            converter="org.ecosystems.weblib.html.form.StringConverter" required="true" >
+                <validators>
+                    <validator validatorClass="org.ecosystems.weblib.html.form.NotNullValidator" />
+                </validators>
+            </field>
+
+        <field name="date" converter="org.ecosystems.weblib.html.form.DateConverter" required="true" >
+
+            <validators>
+                <validator validatorClass="org.ecosystems.weblib.html.form.NotNullValidator"/>
+                <validator validatorClass="org.ecosystems.weblib.html.form.DateValidator" />
+            </validators>
+
+        </field>
+
+        <field name="lat" converter="org.ecosystems.weblib.html.form.NumericConverter" required="true" >
+            <validators>
+                <validator validatorClass="org.ecosystems.weblib.html.form.NotNullValidator"/>
+                <validator validatorClass="org.ecosystems.weblib.html.form.NumericValidator"/>
+            </validators>
+        </field>
+
+        <field name="lng" converter="org.ecosystems.weblib.html.form.NumericConverter" required="true" >
+            <validators>
+                <validator validatorClass="org.ecosystems.weblib.html.form.NotNullValidator"/>
+                <validator validatorClass="org.ecosystems.weblib.html.form.NumericValidator"/>
+            </validators>
+        </field>
+
+
+
+
+        <field name="time" converter="org.ecosystems.weblib.html.form.TimeConverter">
+            <validators>
+                <validator validatorClass="org.ecosystems.weblib.html.form.TimeValidator"/>
+            </validators>
+        </field>
+
+        <field name="name" converter="org.ecosystems.weblib.html.form.StringConverter" required="true" >
+            <validators>
+                <validator validatorClass="org.ecosystems.weblib.html.form.NotNullValidator"/>
+            </validators>
+        </field>
+
+        <field name="description"
+            converter="org.ecosystems.weblib.html.form.StringConverter" required="false" >
+        </field>
+
+        <field name="mail" converter="org.ecosystems.weblib.html.form.StringConverter" required="true" >
+            <validators>
+                <validator validatorClass="org.ecosystems.weblib.html.form.NotNullValidator"/>
+                <validator validatorClass="org.ecosystems.weblib.html.form.MailValidator"/>
+            </validators>
+        </field>
+
+    </form>
+
+</forms>

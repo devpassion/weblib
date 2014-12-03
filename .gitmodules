@@ -1,0 +1,9 @@
+[submodule "weblib"]
+	path = weblib
+	url = ./weblib
+[submodule "weblibtests"]
+	path = weblibtests
+	url = ./weblibtests/
+[submodule "allweblib"]
+	path = allweblib
+	url = ./allweblib/

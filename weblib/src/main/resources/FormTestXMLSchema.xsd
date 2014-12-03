@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd = "http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://www.e-cosystems.org/forms_test"
+	xmlns:tfs="http://www.e-cosystems.org/forms_test"
+elementFormDefault="qualified" attributeFormDefault="qualified"  >
+
+
+
+<!-- <xsd:simpleType name="result"> -->
+<!-- 	<xsd:restriction base="xsd:string"> -->
+<!-- 		<xsd:pattern value="(fail|ok)"></xsd:pattern> -->
+<!-- 	</xsd:restriction> -->
+<!-- </xsd:simpleType> -->
+
+
+<xsd:simpleType name="fieldType">
+	<xsd:restriction base="xsd:string">
+		<xsd:enumeration value="text"></xsd:enumeration>
+		<xsd:enumeration value="option"></xsd:enumeration>
+		<xsd:enumeration value="file"></xsd:enumeration>
+		<xsd:enumeration value="checkbox"></xsd:enumeration>
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:attribute name="formName" type="xsd:string"></xsd:attribute>
+<xsd:attribute name="fieldName" type="xsd:string"></xsd:attribute>
+<!-- <xsd:attribute name="waitingResult" type="result"></xsd:attribute> -->
+<xsd:attribute name="type" type="tfs:fieldType"></xsd:attribute>
+<xsd:attribute name="senarioIndex" type="xsd:positiveInteger"></xsd:attribute>
+
+
+
+
+
+
+<xsd:element name="validValue">
+	<xsd:annotation>
+		<xsd:documentation>Valeur valide</xsd:documentation>
+	</xsd:annotation>
+	<xsd:simpleType>
+		<xsd:restriction base="xsd:string"></xsd:restriction>
+	</xsd:simpleType>
+</xsd:element>
+
+<xsd:element name="badValue">
+	<xsd:annotation>
+		<xsd:documentation>Valeur invalide</xsd:documentation>
+	</xsd:annotation>
+	<xsd:simpleType>
+		<xsd:restriction base="xsd:string"></xsd:restriction>
+	</xsd:simpleType>
+</xsd:element>
+
+
+
+<xsd:element name="validValues">
+	<xsd:annotation>
+		<xsd:documentation>Jeu de valeurs valides</xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" ref="tfs:validValue"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="badValues">
+	<xsd:annotation>
+		<xsd:documentation>Jeu de valeurs invalides</xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" ref="tfs:badValue"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+
+<xsd:element name="fieldValues">
+	<xsd:annotation>
+		<xsd:documentation>Jeu de valeurs pour un champ</xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="tfs:validValues"></xsd:element>
+			<xsd:element ref="tfs:badValues" minOccurs="0"></xsd:element>		
+		</xsd:sequence>		
+		<xsd:attribute ref="tfs:fieldName" use="required"></xsd:attribute>		
+		<xsd:attribute ref="tfs:type" default="text"></xsd:attribute>
+	</xsd:complexType>
+</xsd:element>
+
+
+
+
+
+
+
+
+<!-- Scénarios  -->
+
+<xsd:attribute name="begin" type="xsd:anyURI" >
+	<xsd:annotation>
+		<xsd:documentation>Url relative de départ</xsd:documentation>
+	</xsd:annotation>
+</xsd:attribute>
+
+<xsd:attribute name="name" type="xsd:string">
+	<xsd:annotation>
+		<xsd:documentation>Nom d'une sequence de scenario</xsd:documentation>
+	</xsd:annotation>
+</xsd:attribute>
+
+<xsd:attribute name="enabled" type="xsd:boolean">
+	<xsd:annotation>
+		<xsd:documentation>indique si la sequence de scénario est active</xsd:documentation>
+	</xsd:annotation>
+</xsd:attribute>
+
+
+<xsd:attribute name="workingFormId" type="xsd:string">
+	<xsd:annotation>
+		<xsd:documentation>Id du formulaire rempli pendant un scénario</xsd:documentation>
+	</xsd:annotation>
+</xsd:attribute>
+
+
+
+
+
+
+<xsd:element name="delay" type="xsd:positiveInteger">
+	<xsd:annotation>
+		<xsd:documentation>Délai</xsd:documentation>
+	</xsd:annotation>
+</xsd:element>
+
+<xsd:element name="id" type="xsd:QName">
+	<xsd:annotation>
+		<xsd:documentation>Identifiant</xsd:documentation>
+	</xsd:annotation>
+</xsd:element>
+
+
+
+
+
+<xsd:simpleType name="waitedResultType">
+	<xsd:restriction base="xsd:string">
+		<xsd:enumeration value="matchUrl"></xsd:enumeration>
+		<xsd:enumeration value="noMatchUrl"></xsd:enumeration>
+		<xsd:enumeration value="matchSource"></xsd:enumeration>
+		<xsd:enumeration value="noMatchSource"></xsd:enumeration>						
+	</xsd:restriction>
+</xsd:simpleType>
+
+<xsd:element name="submit" >
+	<xsd:annotation>
+		<xsd:documentation>ID d'un élément à cliquer pour soumettre le formulaire</xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="tfs:id"></xsd:element>
+			<xsd:element ref="tfs:delay" minOccurs="0"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="link" >
+	<xsd:annotation>
+		<xsd:documentation>ID d'un lien à cliquer pour terminer le scénario</xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="tfs:id"></xsd:element>
+			<xsd:element ref="tfs:delay" minOccurs="0"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="preClick" >
+	<xsd:annotation>
+		<xsd:documentation>ID d'un élément à cliquer avant avoir rempli le champ</xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="tfs:id"></xsd:element>
+			<xsd:element ref="tfs:delay" minOccurs="0"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="postClick">
+	<xsd:annotation>
+		<xsd:documentation>ID d'un élément à cliquer après avoir rempli le champ</xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="tfs:id"></xsd:element>
+			<xsd:element ref="tfs:delay" minOccurs="0"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="waitedResult">
+	<xsd:annotation>
+		<xsd:documentation>Type de résultat attendu</xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexType mixed="true">
+		<xsd:attribute name="resultType" use="required" type="tfs:waitedResultType">
+			
+		</xsd:attribute>
+	</xsd:complexType>
+	
+	
+</xsd:element>
+
+
+
+<xsd:element name="waitedResults">
+	<xsd:annotation>
+		<xsd:documentation>Résultat attendu d'un scénario</xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="tfs:waitedResult" minOccurs="1" maxOccurs="unbounded"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="fieldValue" >
+	<xsd:annotation>
+		<xsd:documentation>Jeu de valeurs à tester pour un champ dans un senario</xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="value" maxOccurs="unbounded">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string"></xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element ref="tfs:preClick" minOccurs="0"></xsd:element>
+			<xsd:element ref="tfs:postClick" minOccurs="0"></xsd:element>
+		</xsd:sequence>
+		<xsd:attribute ref="tfs:fieldName" use="required"></xsd:attribute>
+		<xsd:attribute ref="tfs:type" default="text"></xsd:attribute>
+	</xsd:complexType>		
+</xsd:element>
+
+
+<xsd:element name="formScenario">
+	<xsd:annotation>
+		<xsd:documentation>Scénario de tests</xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexType>
+		<xsd:sequence>	
+			<xsd:choice>
+				<xsd:element ref="tfs:submit"></xsd:element>
+				<xsd:element ref="tfs:link" ></xsd:element>
+			</xsd:choice>
+			<xsd:element ref="tfs:fieldValue" minOccurs="0" maxOccurs="unbounded"></xsd:element>		
+			<xsd:element ref="tfs:waitedResults"></xsd:element>	
+		</xsd:sequence>		
+		<xsd:attribute ref="tfs:senarioIndex" use="required"></xsd:attribute>
+		<xsd:attribute ref="tfs:formName" use="prohibited"></xsd:attribute>
+		<xsd:attribute ref="tfs:workingFormId" use="optional" ></xsd:attribute>
+		
+	</xsd:complexType>
+</xsd:element>
+
+
+
+<xsd:element name="scenarioSequence">
+	<xsd:annotation>
+		<xsd:documentation>Séquence de scénarios</xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="tfs:formScenario" minOccurs="1" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>
+					Scénarios exécutés par la séquence.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute ref="tfs:begin" use="optional" default="/">
+			<xsd:annotation>
+				<xsd:documentation>
+				Url relative de début du scénario (commence par /).
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute ref="tfs:name" use="required" >
+			<xsd:annotation>
+				<xsd:documentation>
+				Nom de la séquence de scénario.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute ref="tfs:enabled" use="optional" default="true" >
+			<xsd:annotation>
+				<xsd:documentation>
+				indique si le scénario est actif.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="formValues">
+	<xsd:annotation>
+		<xsd:documentation>Jeu de valeurs d'un formulaire</xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="tfs:fieldValues" maxOccurs="unbounded"></xsd:element>
+		</xsd:sequence>
+		<xsd:attribute ref="tfs:formName" use="required"></xsd:attribute>
+	</xsd:complexType>
+</xsd:element>
+
+
+
+
+<!--  -->
+
+<xsd:element name="formTest">
+	<xsd:annotation>
+		<xsd:documentation>Tests de formulaires</xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element ref="tfs:formValues" maxOccurs="unbounded"></xsd:element>
+			<xsd:element ref="tfs:scenarioSequence" minOccurs="0" maxOccurs="unbounded"></xsd:element>			
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+</xsd:schema>

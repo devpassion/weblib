@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="dessin.svg">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient3705">
+      <stop
+         id="stop3707"
+         offset="0"
+         style="stop-color:#0000ff;stop-opacity:1;" />
+      <stop
+         id="stop3709"
+         offset="1"
+         style="stop-color:#006aff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3611">
+      <stop
+         style="stop-color:#0a4f00;stop-opacity:1;"
+         offset="0"
+         id="stop3613" />
+      <stop
+         style="stop-color:#0a2700;stop-opacity:1"
+         offset="1"
+         id="stop3615" />
+    </linearGradient>
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3611"
+       id="radialGradient3619"
+       cx="231.32494"
+       cy="222.01678"
+       fx="231.32494"
+       fy="222.01678"
+       r="207.08127"
+       gradientTransform="matrix(21.192737,0,0,0.4097561,-4783.3704,532.5525)"
+       gradientUnits="userSpaceOnUse" />
+    <inkscape:perspective
+       id="perspective3629"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3611-8"
+       id="radialGradient3619-0"
+       cx="231.32494"
+       cy="222.01678"
+       fx="231.32494"
+       fy="222.01678"
+       r="207.08127"
+       gradientTransform="matrix(12.012461,0,0,0.4097561,-2682.457,131.04405)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       id="linearGradient3611-8">
+      <stop
+         style="stop-color:#0000ff;stop-opacity:1;"
+         offset="0"
+         id="stop3613-5" />
+      <stop
+         style="stop-color:#007dff;stop-opacity:1;"
+         offset="1"
+         id="stop3615-3" />
+    </linearGradient>
+    <radialGradient
+       r="207.08127"
+       fy="222.01678"
+       fx="231.32494"
+       cy="222.01678"
+       cx="231.32494"
+       gradientTransform="matrix(12.012461,0,0,0.4097561,-2677.3534,365.67516)"
+       gradientUnits="userSpaceOnUse"
+       id="radialGradient3638"
+       xlink:href="#linearGradient3611-8"
+       inkscape:collect="always" />
+    <inkscape:perspective
+       id="perspective3673"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3611-5"
+       id="radialGradient3619-3"
+       cx="231.32494"
+       cy="222.01678"
+       fx="231.32494"
+       fy="222.01678"
+       r="207.08127"
+       gradientTransform="matrix(12.012461,0,0,0.4097561,-2682.457,131.04405)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       id="linearGradient3611-5">
+      <stop
+         style="stop-color:#0000ff;stop-opacity:1;"
+         offset="0"
+         id="stop3613-3" />
+      <stop
+         style="stop-color:#00b5ff;stop-opacity:1"
+         offset="1"
+         id="stop3615-7" />
+    </linearGradient>
+    <inkscape:perspective
+       id="perspective3626"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3648"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3611-0"
+       id="radialGradient3619-39"
+       cx="231.32494"
+       cy="222.01678"
+       fx="231.32494"
+       fy="222.01678"
+       r="207.08127"
+       gradientTransform="matrix(12.012461,0,0,0.4097561,-2412.457,98.186907)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       id="linearGradient3611-0">
+      <stop
+         style="stop-color:#0a3900;stop-opacity:1;"
+         offset="0"
+         id="stop3613-4" />
+      <stop
+         style="stop-color:#0a1900;stop-opacity:1;"
+         offset="1"
+         id="stop3615-33" />
+    </linearGradient>
+    <radialGradient
+       r="207.08127"
+       fy="222.01678"
+       fx="231.32494"
+       cy="222.01678"
+       cx="231.32494"
+       gradientTransform="matrix(21.192743,0,0,0.4097561,-4790.9816,312.81801)"
+       gradientUnits="userSpaceOnUse"
+       id="radialGradient3657"
+       xlink:href="#linearGradient3611-0"
+       inkscape:collect="always" />
+    <inkscape:perspective
+       id="perspective3696"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3730"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3779"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2899"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2921"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3715"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3737"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="72.399252"
+     inkscape:cy="497.39354"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="949"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:url(#radialGradient3619);fill-opacity:1;stroke:none"
+       id="rect2837"
+       width="1207.0197"
+       height="169.70563"
+       x="-484.47134"
+       y="538.67242"
+       ry="19.285715"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot2833"
+       style="font-size:11px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       transform="translate(357.85714,146.42857)"
+       inkscape:export-filename="/home/ubuntu/Bureau/Snoofle/img/path3616-2.png"
+       inkscape:export-xdpi="170.97626"
+       inkscape:export-ydpi="170.97626"><flowRegion
+         id="flowRegion2835"><rect
+           id="rect2838"
+           width="937.14288"
+           height="255.71428"
+           x="-315.71429"
+           y="-143.3521" /></flowRegion><flowPara
+         id="flowPara2840"
+         style="font-size:64px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#0a2700;fill-opacity:1;font-family:Arial Black;-inkscape-font-specification:'Arial Black, Bold'">Snoofle</flowPara></flowRoot>    <path
+       sodipodi:type="arc"
+       style="fill:#0a2700;fill-opacity:1;stroke:none"
+       id="path3616"
+       sodipodi:cx="-62.250652"
+       sodipodi:cy="-48.325287"
+       sodipodi:rx="4.1668792"
+       sodipodi:ry="7.1973367"
+       d="m -58.083773,-48.325287 a 4.1668792,7.1973367 0 1 1 -8.333758,0 4.1668792,7.1973367 0 1 1 8.333758,0 z"
+       transform="matrix(1.2121212,0,0,1,269.21855,99.913343)"
+       inkscape:export-xdpi="170.97626"
+       inkscape:export-ydpi="170.97626" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#0a2700;fill-opacity:1;stroke:none"
+       id="path3616-2"
+       sodipodi:cx="-62.250652"
+       sodipodi:cy="-48.325287"
+       sodipodi:rx="4.1668792"
+       sodipodi:ry="7.1973367"
+       d="m -58.083773,-48.325287 a 4.1668792,7.1973367 0 1 1 -8.333758,0 4.1668792,7.1973367 0 1 1 8.333758,0 z"
+       transform="matrix(1.2121212,0,0,1,229.31753,100.29215)"
+       inkscape:export-xdpi="170.97626"
+       inkscape:export-ydpi="170.97626" />
+    <rect
+       style="fill:url(#radialGradient3657);fill-opacity:1;stroke:none"
+       id="rect2837-4"
+       width="1207.02"
+       height="169.70563"
+       x="-492.08127"
+       y="318.93793"
+       ry="19.285715"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#0a2700;fill-opacity:1;stroke:none"
+       id="path3678"
+       sodipodi:cx="-274.76151"
+       sodipodi:cy="198.78328"
+       sodipodi:rx="115.15739"
+       sodipodi:ry="112.12693"
+       d="m -159.60412,198.78328 a 115.15739,112.12693 0 1 1 -230.31477,0 115.15739,112.12693 0 1 1 230.31477,0 z"
+       transform="matrix(1.000001,0,0,1.027028,-88.893041,710.82532)"
+       inkscape:export-filename="/home/ubuntu/Bureau/Snoofle/img/flowRoot3680.png"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3680"
+       style="font-size:11px;font-style:normal;font-weight:normal;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       transform="translate(-67.397008,825.10202)"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68"><flowRegion
+         id="flowRegion3682"><rect
+           id="rect3684"
+           width="177.78685"
+           height="236.3757"
+           x="-351.53308"
+           y="1.8035365"
+           style="fill:#ffffff" /></flowRegion><flowPara
+         id="flowPara3686"
+         style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ffffff;font-family:Arial Black;-inkscape-font-specification:'Arial Black, Bold'">1</flowPara></flowRoot>    <path
+       sodipodi:type="arc"
+       style="fill:#0a2700;fill-opacity:1;stroke:none"
+       id="path3678-2"
+       sodipodi:cx="-274.76151"
+       sodipodi:cy="198.78328"
+       sodipodi:rx="115.15739"
+       sodipodi:ry="112.12693"
+       d="m -159.60412,198.78328 a 115.15739,112.12693 0 1 1 -230.31477,0 115.15739,112.12693 0 1 1 230.31477,0 z"
+       transform="matrix(1.000001,0,0,1.027028,167.68561,706.78483)"
+       inkscape:export-filename="/home/ubuntu/Bureau/Snoofle/img/flowRoot3680-6.png"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3680-6"
+       style="font-size:11px;font-style:normal;font-weight:normal;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       transform="translate(195.18164,821.06153)"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68"><flowRegion
+         id="flowRegion3682-1"><rect
+           id="rect3684-1"
+           width="177.78685"
+           height="236.3757"
+           x="-351.53308"
+           y="1.8035365"
+           style="fill:#ffffff" /></flowRegion><flowPara
+         id="flowPara3686-7"
+         style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ffffff;font-family:Arial Black;-inkscape-font-specification:'Arial Black, Bold'">2</flowPara></flowRoot>    <path
+       sodipodi:type="arc"
+       style="fill:#0a2700;fill-opacity:1;stroke:none"
+       id="path3678-5"
+       sodipodi:cx="-274.76151"
+       sodipodi:cy="198.78328"
+       sodipodi:rx="115.15739"
+       sodipodi:ry="112.12693"
+       d="m -159.60412,198.78328 a 115.15739,112.12693 0 1 1 -230.31477,0 115.15739,112.12693 0 1 1 230.31477,0 z"
+       transform="matrix(1.000001,0,0,1.027028,444.78723,712.84569)"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3680-7"
+       style="font-size:11px;font-style:normal;font-weight:normal;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       transform="translate(472.28326,827.12239)"
+       inkscape:export-filename="/home/ubuntu/Bureau/Snoofle/img/path3678-5.png"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68"><flowRegion
+         id="flowRegion3682-2"><rect
+           id="rect3684-5"
+           width="177.78685"
+           height="236.3757"
+           x="-351.53308"
+           y="1.8035365"
+           style="fill:#ffffff" /></flowRegion><flowPara
+         id="flowPara3686-79"
+         style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ffffff;font-family:Arial Black;-inkscape-font-specification:'Arial Black, Bold'">3</flowPara></flowRoot>    <path
+       sodipodi:type="arc"
+       style="fill:#0a2700;fill-opacity:1;stroke:none"
+       id="path3678-2-1"
+       sodipodi:cx="-274.76151"
+       sodipodi:cy="198.78328"
+       sodipodi:rx="115.15739"
+       sodipodi:ry="112.12693"
+       d="m -159.60412,198.78328 a 115.15739,112.12693 0 1 1 -230.31477,0 115.15739,112.12693 0 1 1 230.31477,0 z"
+       transform="matrix(1.000001,0,0,1.027028,701.36588,708.8052)"
+       inkscape:export-filename="/home/ubuntu/Bureau/Snoofle/img/flowRoot3680-6-7.png"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3680-6-7"
+       style="font-size:11px;font-style:normal;font-weight:normal;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       transform="translate(726.86191,823.0819)"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68"><flowRegion
+         id="flowRegion3682-1-3"><rect
+           id="rect3684-1-9"
+           width="177.78685"
+           height="236.3757"
+           x="-351.53308"
+           y="1.8035365"
+           style="fill:#ffffff" /></flowRegion><flowPara
+         id="flowPara3686-7-6"
+         style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ffffff;font-family:Arial Black;-inkscape-font-specification:'Arial Black, Bold'">4</flowPara></flowRoot>    <path
+       sodipodi:type="arc"
+       style="fill:#4b7116;fill-opacity:1;stroke:none"
+       id="path3678-1"
+       sodipodi:cx="-274.76151"
+       sodipodi:cy="198.78328"
+       sodipodi:rx="115.15739"
+       sodipodi:ry="112.12693"
+       d="m -159.60412,198.78328 a 115.15739,112.12693 0 1 1 -230.31477,0 115.15739,112.12693 0 1 1 230.31477,0 z"
+       transform="matrix(1.000001,0,0,1.027028,-90.063106,966.39395)"
+       inkscape:export-filename="/home/ubuntu/Bureau/Snoofle/img/flowRoot3680-4.png"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3680-4"
+       style="font-size:11px;font-style:normal;font-weight:normal;fill:#e6e6e6;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       transform="translate(-68.567076,1080.6706)"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68"><flowRegion
+         id="flowRegion3682-5"><rect
+           id="rect3684-8"
+           width="177.78685"
+           height="236.3757"
+           x="-351.53308"
+           y="1.8035365"
+           style="fill:#e6e6e6" /></flowRegion><flowPara
+         id="flowPara3686-5"
+         style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#e6e6e6;font-family:Arial Black;-inkscape-font-specification:'Arial Black, Bold'">1</flowPara></flowRoot>    <path
+       sodipodi:type="arc"
+       style="fill:#4b7116;fill-opacity:1;stroke:none"
+       id="path3678-2-19"
+       sodipodi:cx="-274.76151"
+       sodipodi:cy="198.78328"
+       sodipodi:rx="115.15739"
+       sodipodi:ry="112.12693"
+       d="m -159.60412,198.78328 a 115.15739,112.12693 0 1 1 -230.31477,0 115.15739,112.12693 0 1 1 230.31477,0 z"
+       transform="matrix(1.000001,0,0,1.027028,166.51554,962.35346)"
+       inkscape:export-filename="/home/ubuntu/Bureau/Snoofle/img/flowRoot3680-6-9.png"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3680-6-9"
+       style="font-size:11px;font-style:normal;font-weight:normal;fill:#e6e6e6;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       transform="translate(194.01157,1076.6301)"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68"><flowRegion
+         id="flowRegion3682-1-6"><rect
+           id="rect3684-1-7"
+           width="177.78685"
+           height="236.3757"
+           x="-351.53308"
+           y="1.8035365"
+           style="fill:#e6e6e6" /></flowRegion><flowPara
+         id="flowPara3686-7-9"
+         style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#e6e6e6;font-family:Arial Black;-inkscape-font-specification:'Arial Black, Bold'">2</flowPara></flowRoot>    <path
+       sodipodi:type="arc"
+       style="fill:#4b7116;fill-opacity:1;stroke:none"
+       id="path3678-5-0"
+       sodipodi:cx="-274.76151"
+       sodipodi:cy="198.78328"
+       sodipodi:rx="115.15739"
+       sodipodi:ry="112.12693"
+       d="m -159.60412,198.78328 a 115.15739,112.12693 0 1 1 -230.31477,0 115.15739,112.12693 0 1 1 230.31477,0 z"
+       transform="matrix(1.000001,0,0,1.027028,443.61716,968.41432)"
+       inkscape:export-filename="/home/ubuntu/Bureau/Snoofle/img/flowRoot3680-7-5.png"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3680-7-5"
+       style="font-size:11px;font-style:normal;font-weight:normal;fill:#e6e6e6;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       transform="translate(471.11319,1082.691)"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68"><flowRegion
+         id="flowRegion3682-2-9"><rect
+           id="rect3684-5-7"
+           width="177.78685"
+           height="236.3757"
+           x="-351.53308"
+           y="1.8035365"
+           style="fill:#e6e6e6" /></flowRegion><flowPara
+         id="flowPara3686-79-6"
+         style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#e6e6e6;font-family:Arial Black;-inkscape-font-specification:'Arial Black, Bold'">3</flowPara></flowRoot>    <path
+       sodipodi:type="arc"
+       style="fill:#4b7116;fill-opacity:1;stroke:none"
+       id="path3678-2-1-6"
+       sodipodi:cx="-274.76151"
+       sodipodi:cy="198.78328"
+       sodipodi:rx="115.15739"
+       sodipodi:ry="112.12693"
+       d="m -159.60412,198.78328 a 115.15739,112.12693 0 1 1 -230.31477,0 115.15739,112.12693 0 1 1 230.31477,0 z"
+       transform="matrix(1.000001,0,0,1.027028,700.19581,964.37383)"
+       inkscape:export-filename="/home/ubuntu/Bureau/Snoofle/img/flowRoot3680-6-7-8.png"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3680-6-7-8"
+       style="font-size:11px;font-style:normal;font-weight:normal;fill:#e6e6e6;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       transform="translate(725.69181,1078.6505)"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68"><flowRegion
+         id="flowRegion3682-1-3-1"><rect
+           id="rect3684-1-9-8"
+           width="177.78685"
+           height="236.3757"
+           x="-351.53308"
+           y="1.8035365"
+           style="fill:#e6e6e6" /></flowRegion><flowPara
+         id="flowPara3686-7-6-9"
+         style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#e6e6e6;font-family:Arial Black;-inkscape-font-specification:'Arial Black, Bold'">4</flowPara></flowRoot>    <path
+       style="fill:#808000;fill-opacity:1;stroke:none"
+       d="m 817.61291,66.973249 488.91379,0 78.4279,77.983561 -78.4279,81.62054 -488.91379,0 0,-159.604101 z"
+       id="rect2888-6"
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-filename="/home/ubuntu/Bureau/Snoofle/img/rect2888.png"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68" />
+    <path
+       style="fill:#4c6200;fill-opacity:1;stroke:none"
+       d="m 567.34194,-234.15372 488.91376,0 78.4279,77.98355 -78.4279,81.620542 -488.91376,0 0,-159.604092 z"
+       id="rect2888-6-8"
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-filename="/home/ubuntu/Bureau/Snoofle/img/rect2888.png"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68" />
+    <path
+       style="fill:#808000;fill-opacity:1;stroke:none"
+       d="m 129.24875,103.278 488.91382,0 40.04206,77.98357 -40.04206,81.62054 -488.91382,0 0,-159.60411 z"
+       id="rect2888-5-7"
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68" />
+    <path
+       style="fill:#4c6200;fill-opacity:1;stroke:none"
+       d="m -359.76004,103.23722 488.91382,0 40.04206,77.98356 -40.04206,81.62053 -488.91382,0 0,-159.60409 z"
+       id="rect2888-5"
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68" />
+    <path
+       style="fill:#0a2700;fill-opacity:1;stroke:none"
+       d="m -848.81017,102.99211 488.91382,0 40.04206,77.98356 -40.04206,81.62054 -488.91382,0 0,-159.6041 z"
+       id="rect2888"
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-xdpi="68"
+       inkscape:export-ydpi="68" />
+  </g>
+</svg>

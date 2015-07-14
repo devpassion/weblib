@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tfs:formTest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:schemaLocation="http://www.e-cosystems.org/forms_test /home/tim288/prog/ecosystems_ws/weblib/src/main/resources/FormTestXMLSchema.xsd"
+	xsi:schemaLocation="http://www.e-cosystems.org/forms_test jar:file:../../../../../weblib/src/main/resources/FormTestXMLSchema.xsd"
 	xmlns:tfs="http://www.e-cosystems.org/forms_test"
 	>
 	

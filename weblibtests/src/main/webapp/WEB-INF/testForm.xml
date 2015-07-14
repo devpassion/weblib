@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <fs:forms 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:schemaLocation="http://www.e-cosystems.org/forms jar:file//home/tim288/.m2/repository/org/ecosystems/weblib/0.0.2/weblib-0.0.2.jar!/forms_schema.xsd"
+	xsi:schemaLocation="http://www.e-cosystems.org/forms jar:file:../../../../../weblib/target/weblib-0.1.6.jar!/forms_schema.xsd"
 	xmlns:fs="http://www.e-cosystems.org/forms"
 	xmlns="http://www.e-cosystems.org/forms"
 	>
